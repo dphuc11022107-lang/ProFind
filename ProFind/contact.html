@@ -6,48 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên hệ</title>
     <link rel="stylesheet" href="./asset/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
     <div class="form-container">
         <div>
-            <h1 class="form-title">Liên hệ</h1>
+            <h1 class="form-title"><i class="fa-solid fa-headset"></i> Liên hệ</h1>
             <p class="form-email">Email: contact@jobconnect.com</p>
         </div>
         <form id="applyForm">
             <div class="form-group">
-                <label>Họ và tên</label>
+                <label><i class="fa-solid fa-user"></i> Họ và tên</label>
                 <input type="text" id="name" class="form-control">
                 <small class="error" id="nameError"></small>
             </div>
             
             <div class="form-group">
-                <label>Email</label>
+                <label><i class="fa-solid fa-envelope"></i> Email</label>
                 <input type="email" id="email" class="form-control">
                 <small class="error" id="emailError"></small>
             </div>
             
             <div class="form-group">
-                <label>Số điện thoại</label>
+                <label><i class="fa-solid fa-phone"></i> Số điện thoại</label>
                 <input type="text" id="phone" class="form-control">
                 <small class="error" id="phoneError"></small>
             </div>
             
             <div class="form-group">
-                <label>Chủ đề</label>
+                <label><i class="fa-solid fa-briefcase"></i> Chủ đề</label>
                 <input type="text" id="job" class="form-control">
                 <small class="error" id="jobError"></small>
             </div>
             
             <div class="form-group">
-                <label>Nội dung liên hệ</label>
+                <label><i class="fa-solid fa-message"></i> Nội dung liên hệ</label>
                 <textarea id="note" class="form-control"></textarea>
                 <small class="error" id="noteError"></small>
             </div>
             <p class="note-text"><span class="note">Lưu ý:</span> Bạn hãy nhập đầy đủ và chính xác các thông tin trước khi gửi.</p>
             
 
-            <button type="submit" class="btn">Gửi liên hệ</button>
+            <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Gửi liên hệ</button>
         </form>
     </div>
     <div class="popup" id="popup">
