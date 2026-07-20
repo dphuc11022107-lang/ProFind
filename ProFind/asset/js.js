@@ -1,5 +1,5 @@
 // Form apply
-const form = document.getElementById("applyForm");
+const form = document.getElementById("applyForm") ||  document.getElementById("contactForm");
 const popup=document.getElementById("popup");
 
 form.addEventListener("submit",function(e){
@@ -9,13 +9,13 @@ form.addEventListener("submit",function(e){
     document.getElementById("nameError").innerHTML="";
     document.getElementById("emailError").innerHTML="";
     document.getElementById("phoneError").innerHTML="";
-    document.getElementById("jobError").innerHTML="";
+    document.getElementById("jobError").innerHTML = "";
     document.getElementById("noteError").innerHTML="";
 
     let name=document.getElementById("name").value.trim();
     let email=document.getElementById("email").value.trim();
     let phone=document.getElementById("phone").value.trim();
-    let job=document.getElementById("job").value.trim();
+    let job = document.getElementById("job").value.trim();
     let note=document.getElementById("note").value.trim();
 
     let check=true;
@@ -50,12 +50,12 @@ form.addEventListener("submit",function(e){
     }
 
     if(job===""){
-        document.getElementById("jobError").innerHTML="Vui lòng nhập vị trí ứng tuyển!";
+        document.getElementById("jobError").innerHTML="Vui lòng nhập thông tin!";
         check=false;
     }
 
     if(note===""){
-        document.getElementById("noteError").innerHTML="Vui lòng giới thiệu bản thân!";
+        document.getElementById("noteError").innerHTML="Vui lòng nhập thông tin!";
         check=false;
     }
 
