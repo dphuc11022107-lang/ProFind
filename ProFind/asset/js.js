@@ -1,4 +1,5 @@
-const form=document.getElementById("applyForm");
+// Form apply
+const form = document.getElementById("applyForm");
 const popup=document.getElementById("popup");
 
 form.addEventListener("submit",function(e){
