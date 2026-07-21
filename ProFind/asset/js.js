@@ -1,6 +1,6 @@
 // Form apply
 const form = document.getElementById("applyForm") ||  document.getElementById("contactForm");
-const popup=document.getElementById("popup");
+const popup=document.getElementById("successPopup");
 
 form.addEventListener("submit",function(e){
 
@@ -66,6 +66,14 @@ form.addEventListener("submit",function(e){
 
 });
 
-function closePopup(){
-    popup.style.display="none";
+function openApply() {
+    applyPopup.style.display = "flex";
+}
+
+function closeApply() {
+    applyPopup.style.display = "none";
+}
+
+function closePopup() {
+    successPopup.style.display = "none";
 }

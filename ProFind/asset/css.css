@@ -108,64 +108,41 @@ h2 {
 }
 
 /* form */
-.note {
-    color: red;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 16px;
-}
-.note-text {
-    font-style: italic;
-    font-size: 16px;
-}
-
 .form-container {
     width: 600px;
-    margin: 10px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 0 0 25px gray;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    position: relative;
 }
 
 .form-title {
     text-align: center;
     color: #0d6efd;
-    margin-bottom: 5px;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.form-email {
-    text-align: center;
-    color: black;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-weight: bold;
+    margin-bottom: 25px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
-    font-weight: bold;
     display: block;
-    margin-bottom: 5px;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .form-control {
     width: 100%;
-    height: 35px;
+    height: 45px;
+    padding: 10px 15px;
     border: 1px solid #ccc;
-    border-radius: 16px;
-    box-sizing: border-box;
-    padding: 10px;
-}
-
-select.form-control {
-    height: 50px;
+    border-radius: 12px;
+    font-size: 15px;
 }
 
 textarea.form-control {
@@ -173,20 +150,47 @@ textarea.form-control {
     resize: vertical;
 }
 
+.form-control:focus {
+    outline: none;
+    border: 2px solid #0d6efd;
+    box-shadow: 0 0 8px rgba(13, 110, 253, .3);
+}
+
+.note {
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.note-text {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    display: block;
+    margin-top: 5px;
+}
+
 .btn {
     width: 100%;
-    height: 40px;
     margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
     background: #0d6efd;
-    color: white;
+    color: #fff;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 16px;
+    transition: .3s;
 }
 
 .btn:hover {
-    background-color: #0052a3;
-    cursor: pointer;
+    background: #0052a3;
 }
 
 .popup {
@@ -196,27 +200,60 @@ textarea.form-control {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, .5);
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
-.popup-content {
-    background: white;
-    width: 350px;
-    padding: 40px;
-    border-radius: 15px;
+#applyPopup {
+    overflow-y: auto;
+    align-items: flex-start;
+    padding: 30px 20px;
+}
+
+.popup-form {
+    width: 650px;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.success-content {
+    width: 400px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px;
     text-align: center;
-    box-shadow: 0 0 20px gray;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .25);
+    animation: zoomIn .3s;
 }
 
-.popup-content h3 {
+.success-content i {
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.success-content h3 {
     color: black;
     font-size: 25px;
     line-height: 50px;
 }
 
-.popup-content button {
+.success-content p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 0;
+    line-height: 10px;
+}
+
+.success-content button {
     margin-top: 20px;
     padding: 10px 30px;
     border: none;
@@ -226,15 +263,32 @@ textarea.form-control {
     cursor: pointer;
 }
 
-.error {
-    color: red;
-    font-size: 12px;
-    display: block;
-    margin-top: 5px;
+.success-content button:hover {
+    background: #0052a3;
 }
 
-.form-control:focus {
-    outline: none;
-    border: 2px solid #0d6efd;
-    box-shadow: 0 0 8px rgba(13, 110, 253, .3);
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #777;
+    cursor: pointer;
 }
+
+.close:hover {
+    color: red;
+}
+
+/* @media(max-width:768px) {
+    .popup-form,
+    .success-content,
+    .form-container {
+        width: 95%;
+        padding: 20px;
+    }
+    .form-title {
+        font-size: 24px;
+    }
+} */

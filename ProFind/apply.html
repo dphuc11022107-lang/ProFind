@@ -10,43 +10,61 @@
 </head>
 
 <body>
-    <div class="form-container">
-        <h2 class="form-title"><i class="fa-solid fa-file-signature"></i> ứng tuyển</h2>
-        <form id="applyForm" action="#">
-            <div class="form-group">
-                <label><i class="fa-solid fa-user"></i> Họ và tên</label>
-                <input class="form-control" type="text" id="name" placeholder="Nhập họ và tên">
-                <small id="nameError" class="error"></small>
-            </div>
-            <div class="form-group">
-                <label><i class="fa-solid fa-envelope"></i> Email</label>
-                <input class="form-control" type="text" id="email" placeholder="Nhập email của bạn">
-                <small id="emailError" class="error"></small>
-            </div>
-            <div class="form-group">
-                <label><i class="fa-solid fa-phone"></i> Số điện thoại</label>
-                <input class="form-control" type="text" id="phone" placeholder="Nhập số điện thoại của bạn">
-                <small id="phoneError" class="error"></small>
-            </div>
-            <div class="form-group">
-                <label><i class="fa-solid fa-briefcase"></i> Vị trí ứng tuyển</label>
-                <input class="form-control" type="text" id="job" placeholder="Nhập vị trí công việc">
-                <small id="jobError" class="error"></small>
-            </div>
-            <div class="form-group">
-                <label><i class="fa-solid fa-address-card"></i> Giới thiệu về bản thân</label>
-                <textarea class="form-control" id="note" placeholder="Giới thiệu bản thân của bạn"></textarea>
-                <small id="noteError" class="error"></small>
-            </div>
-            <p class="note-text"><span class="note">Lưu ý:</span> Bạn hãy nhập đầy đủ và chính xác các thông tin trước khi gửi.</p>
-            <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Gửi đơn</button>
-        </form>
+    <button class="btn" onclick="openApply()">
+          <i class="fa-solid fa-file-signature"></i> Ứng tuyển
+    </button>
+    <!-- Popup Apply -->
+    <div id="applyPopup" class="popup">
+        <div class="form-container">
+            <span class="close" onclick="closeApply()">&times;</span>
+            <h2 class="form-title"><i class="fa-solid fa-file-signature"></i> Ứng tuyển</h2>
+            <form id="applyForm">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Họ và tên</label>
+                    <input type="text" id="name" class="form-control" placeholder="Nhập họ và tên">
+                    <small id="nameError" class="error"></small>
+                </div>
+    
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Nhập email của bạn">
+                    <small id="emailError" class="error"></small>
+                </div>
+    
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone"></i> Số điện thoại</label>
+                    <input type="text" id="phone" class="form-control" placeholder="Nhập số điện thoại">
+                    <small id="phoneError" class="error"></small>
+                </div>
+    
+                <div class="form-group">
+                    <label><i class="fa-solid fa-briefcase"></i> Vị trí ứng tuyển</label>
+                    <input type="text" id="job" class="form-control" placeholder="Nhập vị trí ứng tuyển">
+                    <small id="jobError" class="error"></small>
+                </div>
+    
+                <div class="form-group">
+                    <label><i class="fa-solid fa-address-card"></i> Giới thiệu bản thân</label>
+                    <textarea id="note" class="form-control" placeholder="Giới thiệu về bản thân"></textarea>
+                    <small id="noteError" class="error"></small>
+                </div>
+    
+                <p class="note-text">
+                    <span class="note">Lưu ý:</span>
+                    Bạn hãy nhập đầy đủ và chính xác các thông tin trước khi gửi.
+                </p>
+    
+                <button type="submit" class="btn">
+                    <i class="fa-solid fa-paper-plane"></i> Gửi đơn
+                </button>
+            </form>
+        </div>
     </div>
-
-    <!-- Popup -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <h3>Cảm ơn bạn!</h3>
+    
+    <!-- Popup thông báo -->
+    <div id="successPopup" class="popup">
+        <div class="success-content">
+            <h3><i class="fa-solid fa-circle-check"></i> Gửi thành công!</h3>
             <p>Đơn ứng tuyển của bạn đã được gửi thành công.</p>
             <button onclick="closePopup()">
                 Đóng
