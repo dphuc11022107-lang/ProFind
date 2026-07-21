@@ -65,7 +65,6 @@ if (form) {
         }
 
         if (check) {
-
             if (successPopup) {
                 successPopup.style.display = "flex";
             }
@@ -92,7 +91,6 @@ function closeApply() {
 }
 
 function closePopup() {
-
     if (successPopup) {
         successPopup.style.display = "none";
     }
