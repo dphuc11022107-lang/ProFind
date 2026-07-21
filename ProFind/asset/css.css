@@ -147,7 +147,6 @@ textarea.form-control {
 }
 
 .note {
-    color: red;
     font-weight: bold;
     font-style: italic;
 }
@@ -156,6 +155,7 @@ textarea.form-control {
     margin-top: 10px;
     font-size: 15px;
     font-style: italic;
+    line-height: 24px;
 }
 
 .error {
