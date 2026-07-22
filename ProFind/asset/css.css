@@ -1346,3 +1346,108 @@ footer p {
 .col-md-3 {
     animation: fadeUp .8s ease;
 }
+/* Custom Global Styles */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2b2f38;
+}
+
+/* Color Gradient Text */
+.text-gradient {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Navigation */
+.custom-navbar {
+    transition: all 0.3s ease;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+}
+
+/* Hero Section Animation */
+.floating-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero-img {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search Box */
+.search-box {
+    border: 1px solid #e9ecef;
+}
+
+.search-box .form-select:focus,
+.search-box input:focus {
+    box-shadow: none;
+}
+
+/* Category Cards */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover-up {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.hover-up:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Job Cards */
+.company-logo {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-logo img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Company Section */
+.company-item {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.company-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+}
