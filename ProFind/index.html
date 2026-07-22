@@ -84,7 +84,7 @@
                         Hơn 10.000 việc làm từ các doanh nghiệp hàng đầu Việt Nam.
                     </p>
                     <select id="district">
-                        <option>Tất cả quận</option>
+                        <option> Quận/Huyện</option>
                         <option>Quận 1</option>
                         <option>Quận 3</option>
                         <option>Quận 4</option>
@@ -110,7 +110,7 @@
                     </select>
 
                     <select id="category">
-                        <option value="">Tất cả ngành nghề</option>
+                        <option value="">Ngành nghề</option>
                         <option value="Phục Vụ">Phục Vụ</option>
                         <option value="Kế toán">Kế toán</option>
                         <option value="Marketing">Marketing</option>
@@ -124,7 +124,6 @@
                     <select id="jobType">
                         <option>Tất cả loại việc làm</option>
                         <option value="Toàn thời gian">Toàn thời gian</option>
-                        <option value="Toàn thời gian">Toàn thời gian</option>
                         <option value="Bán thời gian">Bán thời gian</option>
                         <option value="Thực tập">Thực tập</option>
                         <option value="Thời vụ">Thời vụ</option>
@@ -135,7 +134,7 @@
                     </select>
 
                     <input type="text" id="search" placeholder="Tìm Việc Làm">
-                    <button class="search-btn">
+                    <button id="searchBtn" class="search-btn">
                         Tìm kiếm
                     </button>
                     <br>
@@ -159,6 +158,11 @@
         <script src="./asset/job.js"></script>
 
     </section>
+    <section class="container py-5" id="ketQua" style="display:none;">
+    <h2>Kết quả tìm kiếm</h2>
+
+    <div class="row" id="danh-sach-cong-viec"></div>
+</section>
     <!-- Danh mục -->
 
     <section class="container py-5">
