@@ -83,17 +83,72 @@
                     <p>
                         Hơn 10.000 việc làm từ các doanh nghiệp hàng đầu Việt Nam.
                     </p>
-                    <select>
-                    <option value="Toàn thời gian">Toàn thời gian</option>
-                    <option value="Bán thời gian">Bán thời gian</option>
-                    <option value="Thực tập">Thực tập</option>
-                    <option value="Thời vụ">Thời vụ</option>
-                    <option value="Làm theo ca">Làm theo ca</option>
-                    <option value="Freelancer">Freelancer</option>
-                    <option value="Làm từ xa">Làm từ xa (Remote)</option>
-                    <option value="Hợp đồng">Hợp đồng</option>
+                           <select id="district">
+                        <option>Tất cả quận</option>
+                        <option>Quận 1</option>
+                        <option>Quận 3</option>
+                        <option>Quận 4</option>
+                        <option>Quận 5</option>
+                        <option>Quận 6</option>
+                        <option>Quận 7</option>
+                        <option>Quận 8</option>
+                        <option>Quận 10</option>
+                        <option>Quận 11</option>
+                        <option>Quận 12</option>
+                        <option>Quận Bình Thạnh</option>
+                        <option>Quận Gò Vấp</option>
+                        <option>Quận Phú Nhuận</option>
+                        <option>Quận Tân Bình</option>
+                        <option>Quận Tân Phú</option>
+                        <option>Quận Bình Tân</option>
+                        <option>Thủ Đức </option>
+                        <option>Huyện Củ Chi</option>
+                        <option>Huyện Hóc Môn</option>
+                        <option>Huyện Nhà Bè</option>
+                        <option>Huyện Bình Chánh</option>
+                        <option>Huyện Cần Giờ</option>
                     </select>
-                    
+
+                    <select id="category">
+                        <option value="">Tất cả ngành nghề</option>
+                        <option value="Phục Vụ">Phục Vụ</option>
+                        <option value="Kế toán">Kế toán</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Công nghệ">Công nghệ</option>
+                        <option value="Pha chế">Pha chế</option>
+                        <option value="Tạp Vụ">Tạp Vụ</option>
+                        <option value="Chăm sóc khách hàng">Chăm sóc khách hàng</option>
+                    </select>
+
+                    <select id="Salary">
+                        <option value="">Tất cả mức lương</option>
+                        <option value="3000000">Dưới 5 triệu</option>
+                        <option value="5000000">Từ 5 - 10 triệu</option>
+                        <option value="10000000">Từ 10 - 15 triệu</option>
+                        <option value="15000000">Trên 15 triệu</option>
+                    </select>
+
+                    <select id="datePosted">
+                        <option>Tất cả ngày đăng</option>
+                        <option>Hôm nay</option>
+                        <option>3 ngày qua</option>
+                        <option>7 ngày qua</option>
+                        <option>30 ngày qua</option>
+                    </select>
+
+                    <select id="jobType">
+                        <option>Tất cả loại việc làm</option>
+                        <option value="Toàn thời gian">Toàn thời gian</option>
+                        <option value="Toàn thời gian">Toàn thời gian</option>
+                        <option value="Bán thời gian">Bán thời gian</option>
+                        <option value="Thực tập">Thực tập</option>
+                        <option value="Thời vụ">Thời vụ</option>
+                        <option value="Làm theo ca">Làm theo ca</option>
+                        <option value="Freelancer">Freelancer</option>
+                        <option value="Làm từ xa">Làm từ xa (Remote)</option>
+                        <option value="Hợp đồng">Hợp đồng</option>
+                    </select>
+
                     <select id="postedBy">
                         <option value="">Đăng bởi</option>
                         <option value="Cá nhân">Cá nhân</option>
@@ -107,19 +162,37 @@
                         Tìm kiếm
                     </button>
                     <br>
-                    </div>
-                    
-                    <div class="col-lg-6 text-center">
-                        <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/03/hinh-anh-lam-viec-inkythuatso-14-09-41-30.jpg"
-                            class="img-fluid rounded">
-                    </div>
-                    
-                    </div>
-                    
-                    </div>
-                    
-                    </section>
+                    </select>
 
+                </div>
+
+                <div class="image">
+
+                    <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/03/hinh-anh-lam-viec-inkythuatso-14-09-41-30.jpg"
+                        class="img-fluid">
+
+                </div>
+
+            </div>
+
+        </div>
+<div class="container mt-5">
+        
+            <h1 class="mb-4">
+        
+                Danh sách việc làm
+        
+            </h1>
+        
+            <div id="danh-sach-cong-viec" class="row">
+        
+            </div>
+        
+        </div>
+    </div>
+    <script src="./asset/job.js"></script>
+
+    </section>
     <!-- Danh mục -->
 
     <section class="container py-5">
