@@ -288,12 +288,18 @@ textarea.form-control {
 
 .popup-content h3 {
     font-size: 26px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    color: #555;
+    margin-top: 10px;
+    line-height: 2;
 }
 
 .popup-content i {
     color: #0d6efd;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     line-height: 5px;
 }
 
@@ -1039,8 +1045,7 @@ RESPONSIVE
 }
 
 /* POPUP */
-
-.popup-contact {
+/* .popup-contact {
     display: none;
     position: fixed;
     inset: 0;
@@ -1076,7 +1081,7 @@ RESPONSIVE
     background: #0d6efd;
     color: white;
     border-radius: 8px;
-}
+} */
 
 /* MOBILE */
 
