@@ -679,9 +679,9 @@ if (contactForm) {
 }
 
 // Đóng popup thông báo
-function closePopup() {
-    popup.style.display = "none";
-}
+// function closePopup() {
+//     popup.style.display = "none";
+// }
 
 // ===============================
 // HIỂN THỊ CHI TIẾT CÔNG VIỆC
@@ -757,23 +757,6 @@ function dongFormUngTuyen(){
     }
 
 }
-
-
-// ===============================
-// ĐÓNG POPUP THÀNH CÔNG
-// ===============================
-
-function closePopup(){
-
-    const successPopup =
-        document.querySelector("#successPopup");
-
-    if(successPopup){
-        successPopup.style.display = "none";
-    }
-
-}
-
 
 // ===============================
 // KIỂM TRA FORM ỨNG TUYỂN
@@ -972,3 +955,18 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 });
+
+function closePopup(){
+
+    const popup = document.getElementById("popup");
+    const successPopup = document.getElementById("successPopup");
+
+    if(popup){
+        popup.style.display = "none";
+    }
+
+    if(successPopup){
+        successPopup.style.display = "none";
+    }
+
+}
