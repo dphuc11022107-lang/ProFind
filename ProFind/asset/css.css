@@ -188,7 +188,7 @@ h2 {
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 .form-email {
@@ -810,7 +810,7 @@ FORM LIĂN Há»†
 .form-subtitle {
     text-align: center;
     color: #777;
-    margin-top: -20px;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 

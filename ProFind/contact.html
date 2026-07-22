@@ -10,56 +10,161 @@
 </head>
 
 <body>
-    <div class="form-contact">
-        <div>
-            <h1 class="form-title"><i class="fa-solid fa-headset"></i> Liên hệ</h1>
-            <p class="form-email">Email: contact@jobconnect.com</p>
+    <div class="contact-page">
+
+        <div class="contact-wrapper">
+
+            <!-- Thông tin liên hệ -->
+            <div class="contact-info">
+
+                <div class="contact-logo">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h1>Liên hệ với chúng tôi</h1>
+
+                <p class="contact-description">
+                    Bạn có câu hỏi, góp ý hoặc cần hỗ trợ?
+                    Hãy gửi thông tin cho JobConnect. Chúng tôi luôn sẵn sàng hỗ trợ bạn.
+                </p>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@jobconnect.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <h4>Điện thoại</h4>
+                        <p>1900 1234</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <h4>Địa chỉ</h4>
+                        <p>Thành phố Hồ Chí Minh</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Form liên hệ -->
+            <div class="form-contact">
+
+                <h2 class="form-title">
+                    Gửi tin nhắn
+                </h2>
+
+                <p class="form-subtitle">
+                    Vui lòng điền đầy đủ thông tin bên dưới
+                </p>
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-user"></i>
+                            Họ và tên
+                        </label>
+
+                        <input type="text" id="name" class="form-control" placeholder="Nhập họ và tên">
+
+                        <small class="error" id="nameError"></small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-envelope"></i>
+                            Email
+                        </label>
+
+                        <input type="email" id="email" class="form-control" placeholder="Nhập email">
+
+                        <small class="error" id="emailError"></small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-phone"></i>
+                            Số điện thoại
+                        </label>
+
+                        <input type="text" id="phone" class="form-control" placeholder="Nhập số điện thoại">
+
+                        <small class="error" id="phoneError"></small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-briefcase"></i>
+                            Chủ đề
+                        </label>
+
+                        <input type="text" id="job" class="form-control" placeholder="Nhập chủ đề liên hệ">
+
+                        <small class="error" id="jobError"></small>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-message"></i>
+                            Nội dung liên hệ
+                        </label>
+
+                        <textarea id="note" class="form-control"
+                            placeholder="Nhập nội dung bạn muốn liên hệ"></textarea>
+
+                        <small class="error" id="noteError"></small>
+                    </div>
+
+
+                    <p class="note-text">
+                        <span class="note">Lưu ý:</span>
+                        Bạn hãy nhập đầy đủ và chính xác các thông tin trước khi gửi.
+                    </p>
+
+
+                    <button type="submit" class="btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Gửi liên hệ
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
-        <form id="applyForm">
-            <div class="form-group">
-                <label><i class="fa-solid fa-user"></i> Họ và tên</label>
-                <input type="text" id="name" class="form-control">
-                <small class="error" id="nameError"></small>
-            </div>
-            
-            <div class="form-group">
-                <label><i class="fa-solid fa-envelope"></i> Email</label>
-                <input type="email" id="email" class="form-control">
-                <small class="error" id="emailError"></small>
-            </div>
-            
-            <div class="form-group">
-                <label><i class="fa-solid fa-phone"></i> Số điện thoại</label>
-                <input type="text" id="phone" class="form-control">
-                <small class="error" id="phoneError"></small>
-            </div>
-            
-            <div class="form-group">
-                <label><i class="fa-solid fa-briefcase"></i> Chủ đề</label>
-                <input type="text" id="job" class="form-control">
-                <small class="error" id="jobError"></small>
-            </div>
-            
-            <div class="form-group">
-                <label><i class="fa-solid fa-message"></i> Nội dung liên hệ</label>
-                <textarea id="note" class="form-control"></textarea>
-                <small class="error" id="noteError"></small>
-            </div>
-            <p class="note-text"><span class="note">Lưu ý:</span> Bạn hãy nhập đầy đủ và chính xác các thông tin trước khi gửi.</p>
-            
 
-            <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Gửi liên hệ</button>
-        </form>
-    </div>
-
-    <div class="popup-contact" id="popup">
-    <div class="popup-content">
-        <h3><i class="fa-solid fa-circle-check success-icon"></i> Gửi thành công!</h3>
-        <p>Cảm ơn bạn đã liên hệ với JobConnect.<br>
-        Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.</p>
-        <button onclick="closePopup()">Đóng</button>
-    </div>
-</div>
-    <script src="./asset/js.js"></script>
+        <div class="popup-contact" id="popup">
+            <div class="popup-content">
+                <h3><i class="fa-solid fa-circle-check success-icon"></i> Gửi thành công!</h3>
+                <p>Cảm ơn bạn đã liên hệ với JobConnect.<br>
+                    Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.</p>
+                <button onclick="closePopup()">Đóng</button>
+            </div>
+        </div>
+        <script src="./asset/js.js"></script>
+        <script src="./asset/job.js"></script>
 </body>
+
 </html>

@@ -1,190 +1,261 @@
-// ==================== FORM ỨNG TUYỂN ====================
+// ==================== POPUP ỨNG TUYỂN ====================
 
-const applyForm = document.getElementById("applyForm");
-const contactForm = document.getElementById("contactForm");
+function moFormUngTuyen(){
 
-const applyPopup = document.getElementById("applyPopup");
-const successPopup = document.getElementById("successPopup");
-const contactPopup = document.getElementById("popup");
+    const popup = document.getElementById("applyPopup");
 
-const form = applyForm || contactForm;
+    if(popup){
+        popup.style.display = "flex";
+    }
 
-if (form) {
+}
 
-    form.addEventListener("submit", function (e) {
 
-        e.preventDefault();
+function dongFormUngTuyen(){
 
-        document.getElementById("nameError").innerHTML = "";
-        document.getElementById("emailError").innerHTML = "";
-        document.getElementById("phoneError").innerHTML = "";
-        document.getElementById("jobError").innerHTML = "";
-        document.getElementById("noteError").innerHTML = "";
+    const popup = document.getElementById("applyPopup");
 
-        let name = document.getElementById("name").value.trim();
-        let email = document.getElementById("email").value.trim();
-        let phone = document.getElementById("phone").value.trim();
-        let job = document.getElementById("job").value.trim();
-        let note = document.getElementById("note").value.trim();
+    if(popup){
+        popup.style.display = "none";
+    }
 
-        let check = true;
+}
 
-        if (name === "") {
-            document.getElementById("nameError").innerHTML = "Vui lòng nhập họ và tên!";
-            check = false;
-        }
 
-        if (email === "") {
-            document.getElementById("emailError").innerHTML = "Vui lòng nhập email!";
-            check = false;
-        } else {
-            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function closePopup(){
 
-            if (!emailRegex.test(email)) {
-                document.getElementById("emailError").innerHTML = "Email không hợp lệ!";
-                check = false;
+    const popup = document.getElementById("successPopup");
+
+    if(popup){
+        popup.style.display = "none";
+    }
+
+}
+
+
+
+// ==================== HIỂN THỊ CHI TIẾT ====================
+
+function hienThiChiTiet(){
+
+    const congViec = JSON.parse(
+        localStorage.getItem("congViecDangXem")
+    );
+
+
+    if(!congViec) return;
+
+
+    document.getElementById("title").textContent =
+        congViec.tenCongViec;
+
+
+    document.getElementById("company").textContent =
+        congViec.tenCongTy;
+
+
+    document.getElementById("salary").textContent =
+        congViec.mucLuong;
+
+
+    document.getElementById("location").textContent =
+        congViec.diaDiem;
+
+
+    document.getElementById("type").textContent =
+        congViec.loaiCongViec;
+
+
+    document.getElementById("category").textContent =
+        congViec.nganhNghe;
+
+
+    document.getElementById("description").textContent =
+        congViec.moTa;
+
+
+    document.getElementById("requirement").textContent =
+        congViec.yeuCau;
+
+
+
+    // tự điền vị trí ứng tuyển
+
+    const jobInput = document.getElementById("job");
+
+    if(jobInput){
+
+        jobInput.value = congViec.tenCongViec;
+
+    }
+
+}
+
+
+
+// ==================== KIỂM TRA FORM ====================
+
+
+function kiemTraBieuMau(){
+
+
+    let hopLe = true;
+
+
+    const name =
+        document.getElementById("name");
+
+    const email =
+        document.getElementById("email");
+
+    const phone =
+        document.getElementById("phone");
+
+    const job =
+        document.getElementById("job");
+
+    const note =
+        document.getElementById("note");
+
+
+
+    if(name.value.trim()==""){
+
+        document.getElementById("nameError").textContent =
+        "Vui lòng nhập họ và tên";
+
+        hopLe=false;
+
+    }
+
+
+
+    let emailRegex =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if(email.value.trim()==""){
+
+        document.getElementById("emailError").textContent =
+        "Vui lòng nhập email";
+
+        hopLe=false;
+
+    }
+    else if(!emailRegex.test(email.value)){
+
+        document.getElementById("emailError").textContent =
+        "Email không hợp lệ";
+
+        hopLe=false;
+
+    }
+
+
+
+    let phoneRegex =
+    /^[0-9]{10}$/;
+
+
+    if(!phoneRegex.test(phone.value)){
+
+        document.getElementById("phoneError").textContent =
+        "Số điện thoại phải có 10 số";
+
+        hopLe=false;
+
+    }
+
+
+
+    if(job.value.trim()==""){
+
+        document.getElementById("jobError").textContent =
+        "Vui lòng nhập vị trí ứng tuyển";
+
+        hopLe=false;
+
+    }
+
+
+
+    if(note.value.trim()==""){
+
+        document.getElementById("noteError").textContent =
+        "Vui lòng giới thiệu bản thân";
+
+        hopLe=false;
+
+    }
+
+
+
+    return hopLe;
+
+}
+
+
+
+// ==================== LOAD TRANG ====================
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+
+    // trang detail
+
+    if(document.getElementById("title")){
+
+        hienThiChiTiet();
+
+    }
+
+
+
+    // form apply
+
+    const form =
+    document.getElementById("applyForm");
+
+
+    if(form){
+
+        form.addEventListener("submit",(e)=>{
+
+
+            e.preventDefault();
+
+
+
+            if(!kiemTraBieuMau()){
+
+                return;
+
             }
-        }
 
-        if (phone === "") {
-            document.getElementById("phoneError").innerHTML = "Vui lòng nhập số điện thoại!";
-            check = false;
-        } else {
 
-            let phoneRegex = /^[0-9]{10}$/;
 
-            if (!phoneRegex.test(phone)) {
-                document.getElementById("phoneError").innerHTML = "Số điện thoại phải có 10 chữ số!";
-                check = false;
-            }
-        }
+            const success =
+            document.getElementById("successPopup");
 
-        if (job === "") {
-            document.getElementById("jobError").innerHTML = "Vui lòng nhập vị trí ứng tuyển!";
-            check = false;
-        }
 
-        if (note === "") {
-            document.getElementById("noteError").innerHTML = "Vui lòng giới thiệu bản thân!";
-            check = false;
-        }
 
-        if (check) {
+            if(success){
 
-            if (applyPopup) {
-                applyPopup.style.display = "none";
+                success.style.display="flex";
+
             }
 
-            if (successPopup) {
-                successPopup.style.display = "flex";
-            }
+
 
             form.reset();
-        }
-
-    });
-
-}
 
 
-// ==================== POPUP ====================
+            dongFormUngTuyen();
 
-function openApply() {
 
-    if (applyPopup) {
-        applyPopup.style.display = "flex";
+        });
+
     }
 
-}
 
-function closeApply() {
-
-    if (applyPopup) {
-        applyPopup.style.display = "none";
-    }
-
-}
-
-function closePopup() {
-
-    if (successPopup) {
-        successPopup.style.display = "none";
-    }
-
-    if (contactPopup) {
-        contactPopup.style.display = "none";
-    }
-
-}
-
-
-// ==================== DANH SÁCH CÔNG VIỆC ====================
-
-const jobs = [
-
-    {
-        title: "Frontend Developer",
-        company: "FPT Software",
-        salary: "15 - 20 triệu",
-        location: "Quận 1"
-    },
-
-    {
-        title: "Backend Developer",
-        company: "Shopee",
-        salary: "25 - 35 triệu",
-        location: "Quận 7"
-    },
-
-    {
-        title: "Nhân viên Marketing",
-        company: "VNG",
-        salary: "12 - 18 triệu",
-        location: "Bình Thạnh"
-    }
-
-    // Thêm tiếp đến đủ 35 công việc
-
-];
-
-
-// ==================== HIỂN THỊ JOB ====================
-
-const jobList = document.getElementById("jobList");
-
-if (jobList) {
-
-    jobs.forEach((job, index) => {
-
-        jobList.innerHTML += `
-
-        <div class="job-card">
-
-            <h3>${job.title}</h3>
-
-            <p>
-                <i class="fa-solid fa-building"></i>
-                ${job.company}
-            </p>
-
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                ${job.location}
-            </p>
-
-            <p>
-                <i class="fa-solid fa-money-bill-wave"></i>
-                ${job.salary}
-            </p>
-
-            <a href="detail.html?id=${index}" class="btn">
-                Xem chi tiết
-            </a>
-
-        </div>
-
-        `;
-
-    });
-
-}
+});
