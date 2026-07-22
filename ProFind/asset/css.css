@@ -124,12 +124,25 @@ button {
     border: 1px solid #0138de;
     margin: 10px 0 25px;
 }
+search-btn{
+    width:120px;
+    height:45px;
+    background:#ffc107;
+    color:#000;
+    font-weight:bold;
+    border-radius:8px;
+}
 
+.search-btn:hover{
+    background:#e0a800;
+}
 select {
-    height: 40px;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 12px;
+    width: 150px;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
 }
 
 button {
@@ -137,6 +150,7 @@ button {
     border-radius: 6px;
     cursor: pointer;
 }
+
 
 footer {
     background: #212529;
