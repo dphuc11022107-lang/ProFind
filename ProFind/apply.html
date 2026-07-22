@@ -19,48 +19,96 @@
             <span class="close" onclick="closeApply()">&times;</span>
             <h2 class="form-title"><i class="fa-solid fa-file-signature"></i> Ứng tuyển</h2>
             <form id="applyForm">
+                <div class="upload-box">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h4>Tải CV từ máy tính</h4>
+                    <p>Hỗ trợ định dạng .doc, .docx, .pdf (tối đa 5MB)</p>
+                    <input type="file" id="cv" hidden>
+                    <label for="cv" class="upload-btn">
+                        Chọn CV
+                    </label>
+                </div>
+            
+                <div class="info-header">
+                    <span class="info-left">
+                        Vui lòng nhập đầy đủ thông tin chi tiết:
+                    </span>
+            
+                    <span class="info-right">
+                        (*) Thông tin bắt buộc
+                    </span>
+                </div>
+            
                 <div class="form-group">
-                    <label><i class="fa-solid fa-user"></i> Họ và tên</label>
+                    <label>Họ và tên <span style="color:red">*</span></label>
                     <input type="text" id="name" class="form-control" placeholder="Nhập họ và tên">
                     <small id="nameError" class="error"></small>
                 </div>
-    
-                <div class="form-group">
-                    <label><i class="fa-solid fa-envelope"></i> Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Nhập email của bạn">
-                    <small id="emailError" class="error"></small>
+            
+                <div class="row">
+            
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Email <span style="color:red">*</span></label>
+                            <input type="email" id="email" class="form-control" placeholder="Nhập email">
+                            <small id="emailError" class="error"></small>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Số điện thoại <span style="color:red">*</span></label>
+                            <input type="text" id="phone" class="form-control" placeholder="Nhập số điện thoại">
+                            <small id="phoneError" class="error"></small>
+                        </div>
+                    </div>
+            
                 </div>
-    
+            
                 <div class="form-group">
-                    <label><i class="fa-solid fa-phone"></i> Số điện thoại</label>
-                    <input type="text" id="phone" class="form-control" placeholder="Nhập số điện thoại">
-                    <small id="phoneError" class="error"></small>
-                </div>
-    
-                <div class="form-group">
-                    <label><i class="fa-solid fa-briefcase"></i> Vị trí ứng tuyển</label>
-                    <input type="text" id="job" class="form-control" placeholder="Nhập vị trí ứng tuyển">
+                    <label>Vị trí ứng tuyển <span style="color:red">*</span></label>
+            
+                    <input type="text" id="job" class="form-control">
+            
                     <small id="jobError" class="error"></small>
                 </div>
-    
+            
                 <div class="form-group">
-                    <label><i class="fa-solid fa-address-card"></i> Giới thiệu bản thân</label>
-                    <textarea id="note" class="form-control" placeholder="Giới thiệu về bản thân"></textarea>
+                    <label>Giới thiệu bản thân</label>
+            
+                    <textarea id="note" class="form-control" placeholder="Giới thiệu đôi nét về bản thân"></textarea>
+            
                     <small id="noteError" class="error"></small>
                 </div>
-    
-                <div class="note-text">
-                    <p><span class="note"><i class="fa-solid fa-circle-info" style="color:red;"></i> Lưu ý:</span></p>
-                    <p>JobConnect khuyên tất cả các bạn hãy luôn cẩn trọng trong quá trình tìm việc và chủ động nghiên cứu về thông tin công ty, vị
-                    trí việc làm trước khi ứng tuyển.
-                    Ứng viên cần có trách nhiệm với hành vi ứng tuyển của mình. Nếu bạn gặp phải tin tuyển dụng hoặc nhận được liên lạc đáng
-                    ngờ của nhà tuyển dụng, hãy báo cáo ngay cho JobConnect qua email <u>contact@jobconnect.com</u> để được hỗ trợ kịp thời.</p>
-                    
+            
+                <div class="form-check">
+                    <input type="checkbox">
+            
+                    <label>
+                        Tôi đồng ý với <u>điều khoản sử dụng</u>.
+                    </label>
                 </div>
-    
+            
+                <div class="note-text">
+                    <p>
+                        <span class="note">
+                            <i class="fa-solid fa-circle-info" style="color:red"></i>
+                            Lưu ý:
+                        </span>
+                    </p>
+            
+                    <p>
+                        JobConnect khuyên tất cả ứng viên nên tìm hiểu kỹ doanh nghiệp trước khi ứng tuyển.
+                        Nếu phát hiện tin tuyển dụng không đúng, vui lòng liên hệ qua
+                        <u>contact@jobconnect.com</u>.
+                    </p>
+                </div>
+            
                 <button type="submit" class="btn">
-                    <i class="fa-solid fa-paper-plane"></i> Gửi đơn
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Gửi đơn
                 </button>
+            
             </form>
         </div>
     </div>

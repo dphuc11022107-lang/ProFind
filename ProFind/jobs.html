@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách việc làm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    
+        <div class="container">
+    
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                JobConnect
+            </a>
+    
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+    
+                <span class="navbar-toggler-icon"></span>
+    
+            </button>
+    
+            <div class="collapse navbar-collapse" id="menu">
+    
+                <ul class="navbar-nav ms-auto">
+    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            Trang chủ
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="jobs.html">
+                            Việc làm
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Công ty
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Liên hệ
+                        </a>
+                    </li>
+    
+                </ul>
+    
+            </div>
+    
+        </div>
+    
+    </nav>
+    
+    <!-- Hero -->
+    
+    <section class="hero">
+    
+        <div class="container">
+    
+            <div class="row align-items-center">
+    
+                <div class="col-lg-6">
+    
+                    <h1>Tìm công việc mơ ước của bạn</h1>
+    
+                    <p>
+                        Hơn 10.000 việc làm từ các doanh nghiệp hàng đầu Việt Nam.
+                    </p>
+    
+                    <input type="text" id="search" placeholder="Tìm việc làm">
+    
+                    <button class="search-btn">
+                        Tìm kiếm
+                    </button>
+    
+                    <br><br>
+    
+                    <select id="district">
+                        <option>Tất cả quận</option>
+                        <option>Quận 1</option>
+                        <option>Quận 3</option>
+                        <option>Quận 4</option>
+                        <option>Quận 5</option>
+                        <option>Quận 6</option>
+                        <option>Quận 7</option>
+                        <option>Quận 8</option>
+                        <option>Quận 10</option>
+                        <option>Quận 11</option>
+                        <option>Quận 12</option>
+                        <option>Quận Bình Thạnh</option>
+                        <option>Quận Gò Vấp</option>
+                        <option>Quận Phú Nhuận</option>
+                        <option>Quận Tân Bình</option>
+                        <option>Quận Tân Phú</option>
+                        <option>Quận Bình Tân</option>
+                        <option>Thủ Đức </option>
+                        <option>Huyện Củ Chi</option>
+                        <option>Huyện Hóc Môn</option>
+                        <option>Huyện Nhà Bè</option>
+                        <option>Huyện Bình Chánh</option>
+                        <option>Huyện Cần Giờ</option>
+                    </select>
+    
+                    <select id="category">
+                        <option value="">Tất cả ngành nghề</option>
+                        <option value="Phục Vụ">Phục Vụ</option>
+                        <option value="Kế toán">Kế toán</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Công nghệ">Công nghệ</option>
+                        <option value="Pha chế">Pha chế</option>
+                        <option value="Tạp Vụ">Tạp Vụ</option>
+                        <option value="Chăm sóc khách hàng">Chăm sóc khách hàng</option>
+                    </select>
+    
+                    <select id="salary">
+    
+                        <option>Tất cả mức lương</option>
+                        <option>Dưới 5 triệu</option>
+                        <option>5 - 10 triệu</option>
+                        <option>10 - 15 triệu</option>
+                        <option>Trên 15 triệu</option>
+    
+                    </select>
+    
+                </div>
+    
+                <div class="col-lg-6 text-center">
+    
+                    <img src="images/banner.jpg" class="img-fluid">
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </section>
+        <div class="container mt-5">
+        
+            <h1 class="mb-4">
+        
+                Danh sách việc làm
+        
+            </h1>
+        
+            <div id="danh-sach-cong-viec" class="row">
+        
+            </div>
+        
+        </div>
+    </div>
+    <script src="./asset/job.js"></script>
+
+</body>
+
+</html>
