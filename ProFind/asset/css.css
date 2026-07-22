@@ -1135,3 +1135,209 @@ RESPONSIVE
         align-self: center;
     }
 }
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    top: -120px;
+    left: -100px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    right: -150px;
+    bottom: -180px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: .95;
+}
+
+/* ABOUT */
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.vanban {
+    flex: 1;
+}
+
+.vanban h2 {
+    color: #2563eb;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.vanban p {
+    color: #555;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.hinh-anh {
+    flex: 1;
+    text-align: center;
+}
+
+.hinh-anh img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
+    transition: .5s;
+}
+
+.hinh-anh img:hover {
+    transform: scale(1.04) rotate(-1deg);
+}
+
+/* Tiêu đề */
+
+section h2 {
+    font-weight: 700;
+    color: #222;
+}
+
+/* CARD */
+
+.category {
+    background: #fff;
+    border-radius: 18px;
+    padding: 35px 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+    transition: .35s;
+    height: 100%;
+}
+
+.category:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, .25);
+}
+
+.category h5 {
+    margin-top: 18px;
+    margin-bottom: 15px;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.category p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* THỐNG KÊ */
+
+.container.py-5.text-center .col-md-3 {
+    margin-bottom: 25px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+.container.py-5.text-center .col-md-3 h2 {
+    color: #2563eb;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.container.py-5.text-center .col-md-3 p {
+    color: #666;
+    font-size: 18px;
+}
+
+.container.py-5.text-center .col-md-3:hover {
+    transform: translateY(-10px);
+}
+
+/* FAQ */
+
+#faqAccordion {
+    max-width: 900px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .08);
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-button {
+    font-weight: 600;
+    padding: 20px;
+    font-size: 17px;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #2563eb;
+    color: #fff;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    color: #555;
+    line-height: 1.8;
+    background: #fff;
+}
+
+.accordion-body a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.accordion-body a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+
+footer {
+    background: #111827;
+    color: white;
+    padding: 50px 0;
+    margin-top: 70px;
+}
+
+footer h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin: 6px 0;
+    color: #ddd;
+}
+
+/* Animation */
+
+.category,
+.hinh-anh img,
+.col-md-3 {
+    animation: fadeUp .8s ease;
+}
