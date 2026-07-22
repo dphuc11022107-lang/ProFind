@@ -392,7 +392,7 @@ const danhSachCongViec = [
     }
 
 ];
-
+let boLocGanNhat = "";
 function hienThiCongViec(danhSach = danhSachCongViec) {
     const khuVucHienThi = document.querySelector("#danh-sach-cong-viec");
 
@@ -420,33 +420,47 @@ function hienThiCongViec(danhSach = danhSachCongViec) {
 }
 
 function locCongViec() {
-    const tuKhoa = document.querySelector("#search")?.value.toLowerCase() || "";
-    const quan = document.querySelector("#district")?.value || "Tất cả quận";
-    const nganhNghe = document.querySelector("#category")?.value || "";
-    const mucLuong = document.querySelector("#salary")?.value || "";
-    const ketQua = danhSachCongViec.filter(congViec => {
-        const noiDung = `
-        ${congViec.tenCongViec}
-        ${congViec.tenCongTy}
-        ${congViec.nganhNghe}
-        ${congViec.moTa}
-    `.toLowerCase();
 
-        const dungTuKhoa = noiDung.includes(tuKhoa);
+    const tuKhoa = document.getElementById("search").value.toLowerCase().trim();
+    const quan = document.getElementById("district").value;
+    const nganh = document.getElementById("category").value;
 
-        const dungQuan = quan === "Tất cả quận" ||
-            congViec.diaDiem.includes(quan.replace("Quận ", ""));
+    const ketQua = danhSachCongViec.filter(cv => {
 
-        const dungNganh = nganhNghe === "" ||
-            congViec.nganhNghe === nganhNghe;
+        const dungTuKhoa =
+            tuKhoa === "" ||
+            cv.tenCongViec.toLowerCase().includes(tuKhoa) ||
+            cv.tenCongTy.toLowerCase().includes(tuKhoa);
 
-        return dungTuKhoa && dungQuan && dungNganh;
+        const dungQuan =
+            quan === "Tất cả quận" ||
+            cv.diaDiem.includes(quan);
+
+        const dungNganh =
+            nganh === "" ||
+            cv.nganhNghe === nganh;
+
+        if (boLocGanNhat === "search") {
+            return dungTuKhoa;
+        }
+
+        if (boLocGanNhat === "district") {
+            return dungQuan;
+        }
+
+        if (boLocGanNhat === "category") {
+            return dungNganh;
+        }
+
+        return true;
+
     });
+
+    document.getElementById("ketQua").style.display = "block";
 
     hienThiCongViec(ketQua);
 
 }
-
 function xemChiTiet(maCongViec) {
     const congViec = danhSachCongViec.find(
         congViec => congViec.ma === maCongViec
@@ -553,23 +567,36 @@ function closePopup() {
 document.addEventListener("DOMContentLoaded", () => {
 
     // HIỂN THỊ DANH SÁCH CÔNG VIỆC
-    if (document.querySelector("#danh-sach-cong-viec")) {
-        hienThiCongViec();
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+
+        document.getElementById("searchBtn")
+            ?.addEventListener("click", locCongViec);
+
+    });
 
     // TÌM KIẾM
     document.querySelector("#searchBtn")
         ?.addEventListener("click", locCongViec);
 
     document.querySelector("#search")
-        ?.addEventListener("keyup", locCongViec);
+        ?.addEventListener("keyup", () => {
+            boLocGanNhat = "search";
+            locCongViec();
+        });
+
 
     document.querySelector("#district")
-        ?.addEventListener("change", locCongViec);
+        ?.addEventListener("change", () => {
+            boLocGanNhat = "district";
+            locCongViec();
+        });
+
 
     document.querySelector("#category")
-        ?.addEventListener("change", locCongViec);
-
+        ?.addEventListener("change", () => {
+            boLocGanNhat = "category";
+            locCongViec();
+        });
     // HIỂN THỊ CHI TIẾT CÔNG VIỆC
     if (document.querySelector("#title")) {
         hienThiChiTiet();
@@ -724,7 +751,7 @@ function hienThiChiTiet() {
     // tự điền vị trí ứng tuyển
     const jobInput = document.querySelector("#job");
 
-    if(jobInput){
+    if (jobInput) {
         jobInput.value = congViec.tenCongViec;
     }
 
@@ -735,24 +762,24 @@ function hienThiChiTiet() {
 // MỞ / ĐÓNG FORM ỨNG TUYỂN
 // ===============================
 
-function moFormUngTuyen(){
+function moFormUngTuyen() {
 
     const applyPopup =
         document.querySelector("#applyPopup");
 
-    if(applyPopup){
+    if (applyPopup) {
         applyPopup.style.display = "flex";
     }
 
 }
 
 
-function dongFormUngTuyen(){
+function dongFormUngTuyen() {
 
     const applyPopup =
         document.querySelector("#applyPopup");
 
-    if(applyPopup){
+    if (applyPopup) {
         applyPopup.style.display = "none";
     }
 
@@ -762,7 +789,7 @@ function dongFormUngTuyen(){
 // KIỂM TRA FORM ỨNG TUYỂN
 // ===============================
 
-function kiemTraBieuMau(form){
+function kiemTraBieuMau(form) {
 
     let hopLe = true;
 
@@ -784,42 +811,42 @@ function kiemTraBieuMau(form){
 
 
 
-    document.querySelector("#nameError").textContent="";
-    document.querySelector("#emailError").textContent="";
-    document.querySelector("#phoneError").textContent="";
-    document.querySelector("#jobError").textContent="";
-    document.querySelector("#noteError").textContent="";
+    document.querySelector("#nameError").textContent = "";
+    document.querySelector("#emailError").textContent = "";
+    document.querySelector("#phoneError").textContent = "";
+    document.querySelector("#jobError").textContent = "";
+    document.querySelector("#noteError").textContent = "";
 
 
 
-    if(name.value.trim()==""){
+    if (name.value.trim() == "") {
 
         document.querySelector("#nameError")
-        .textContent="Vui lòng nhập họ và tên";
+            .textContent = "Vui lòng nhập họ và tên";
 
-        hopLe=false;
+        hopLe = false;
     }
 
 
 
     let emailRegex =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-    if(email.value.trim()==""){
+    if (email.value.trim() == "") {
 
         document.querySelector("#emailError")
-        .textContent="Vui lòng nhập email";
+            .textContent = "Vui lòng nhập email";
 
-        hopLe=false;
+        hopLe = false;
 
     }
-    else if(!emailRegex.test(email.value)){
+    else if (!emailRegex.test(email.value)) {
 
         document.querySelector("#emailError")
-        .textContent="Email không hợp lệ";
+            .textContent = "Email không hợp lệ";
 
-        hopLe=false;
+        hopLe = false;
 
     }
 
@@ -827,45 +854,45 @@ function kiemTraBieuMau(form){
 
 
     let phoneRegex =
-    /^[0-9]{10}$/;
+        /^[0-9]{10}$/;
 
 
-    if(phone.value.trim()==""){
-
-        document.querySelector("#phoneError")
-        .textContent="Vui lòng nhập số điện thoại";
-
-        hopLe=false;
-
-    }
-    else if(!phoneRegex.test(phone.value)){
+    if (phone.value.trim() == "") {
 
         document.querySelector("#phoneError")
-        .textContent="Số điện thoại phải có 10 số";
+            .textContent = "Vui lòng nhập số điện thoại";
 
-        hopLe=false;
+        hopLe = false;
+
+    }
+    else if (!phoneRegex.test(phone.value)) {
+
+        document.querySelector("#phoneError")
+            .textContent = "Số điện thoại phải có 10 số";
+
+        hopLe = false;
 
     }
 
 
 
-    if(job.value.trim()==""){
+    if (job.value.trim() == "") {
 
         document.querySelector("#jobError")
-        .textContent="Vui lòng nhập vị trí ứng tuyển";
+            .textContent = "Vui lòng nhập vị trí ứng tuyển";
 
-        hopLe=false;
+        hopLe = false;
 
     }
 
 
 
-    if(note.value.trim()==""){
+    if (note.value.trim() == "") {
 
         document.querySelector("#noteError")
-        .textContent="Vui lòng giới thiệu bản thân";
+            .textContent = "Vui lòng giới thiệu bản thân";
 
-        hopLe=false;
+        hopLe = false;
 
     }
 
@@ -880,11 +907,11 @@ function kiemTraBieuMau(form){
 // LOAD TRANG
 // ===============================
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
 
     // trang danh sách
-    if(document.querySelector("#danh-sach-cong-viec")){
+    if (document.querySelector("#danh-sach-cong-viec")) {
 
         hienThiCongViec();
 
@@ -893,7 +920,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
     // trang chi tiết
-    if(document.querySelector("#title")){
+    if (document.querySelector("#title")) {
 
         hienThiChiTiet();
 
@@ -909,19 +936,19 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-    if(applyForm){
+    if (applyForm) {
 
 
         applyForm.addEventListener(
             "submit",
-            function(e){
+            function (e) {
 
 
                 e.preventDefault();
 
 
 
-                if(!kiemTraBieuMau(applyForm)){
+                if (!kiemTraBieuMau(applyForm)) {
                     return;
                 }
 
@@ -932,9 +959,9 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-                if(successPopup){
+                if (successPopup) {
 
-                    successPopup.style.display="flex";
+                    successPopup.style.display = "flex";
 
                 }
 
@@ -956,16 +983,16 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 });
 
-function closePopup(){
+function closePopup() {
 
     const popup = document.getElementById("popup");
     const successPopup = document.getElementById("successPopup");
 
-    if(popup){
+    if (popup) {
         popup.style.display = "none";
     }
 
-    if(successPopup){
+    if (successPopup) {
         successPopup.style.display = "none";
     }
 
