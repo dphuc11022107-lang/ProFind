@@ -512,42 +512,12 @@ function xemChiTiet(maCongViec) {
 
 }
 
-function hienThiChiTiet() {
-    const congViec = JSON.parse(
-        localStorage.getItem("congViecDangXem")
-    );
-    if (!congViec) return;
-    document.querySelector("#title").textContent =
-        congViec.tenCongViec;
-    document.querySelector("#company").textContent =
-        congViec.tenCongTy;
-    document.querySelector("#salary").textContent =
-        congViec.mucLuong;
-    document.querySelector("#location").textContent =
-        congViec.diaDiem;
-    document.querySelector("#type").textContent =
-        congViec.loaiCongViec;
-    document.querySelector("#category").textContent =
-        congViec.nganhNghe;
-    document.querySelector("#requirement").textContent =
-        congViec.yeuCau;
-    document.querySelector("#description").textContent =
-        congViec.moTa;
-}
+
 
 /*const applyPopup = document.querySelector("#applyPopup");
 if (applyPopup) {
     applyPopup.style.display = "flex";
 }*/
-
-function moFormUngTuyen() {
-    const applyPopup = document.querySelector("#applyPopup");
-
-    if (applyPopup) {
-        applyPopup.style.display = "flex";
-    }
-
-}
 
 function dongFormUngTuyen() {
     const applyPopup = document.querySelector("#applyPopup");
