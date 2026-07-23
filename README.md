@@ -86,7 +86,7 @@ ProFIND/
 |------|-----------|-----------|
 | 2551010179 | Đào Thị Diễm Phúc | Trang chủ |
 | XXXXXXXX | Thành viên 2 | Danh sách việc làm |
-| 2551010227 | Thành viên 3 | Chi tiết việc làm & Công ty |
+| 2551010227 | Lê Bảo Thy | Chi tiết việc làm & Công ty |
 | XXXXXXXX | Thành viên 4 | Ứng tuyển, Liên hệ & Giới thiệu |
 | XXXXXXXX | Thành viên 5 | CSS tổng thể, JavaScript, Responsive & Ghép dự án |
 
