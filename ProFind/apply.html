@@ -6,20 +6,21 @@
     <title>Ứng tuyển</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./asset/css.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
-    <button class="btn" onclick="openApply()">
-          <i class="fa-solid fa-file-signature"></i> Ứng tuyển
+    <button class="btn" onclick="openApply()" data-aos="zoom-in">
+        <i class="fa-solid fa-file-signature"></i> Ứng tuyển
     </button>
     <!-- Popup Apply -->
     <div id="applyPopup" class="popup">
-        <div class="form-apply">
+        <div class="form-apply" data-aos="zoom-in-up">
             <span class="close" onclick="closeApply()">&times;</span>
             <h2 class="form-title"><i class="fa-solid fa-file-signature"></i> Ứng tuyển</h2>
             <form id="applyForm">
-                <div class="upload-box">
+                <div class="upload-box" data-aos="fade-down" data-aos-delay="100">
                     <i class="fa-solid fa-cloud-arrow-up"></i>
                     <h4>Tải CV từ máy tính</h4>
                     <p>Hỗ trợ định dạng .doc, .docx, .pdf (tối đa 5MB)</p>
@@ -39,7 +40,7 @@
                     </span>
                 </div>
             
-                <div class="form-group">
+                <div class="form-group" data-aos="fade-right" data-aos-delay="200">
                     <label>Họ và tên <span style="color:red">*</span></label>
                     <input type="text" id="name" class="form-control" placeholder="Nhập họ và tên">
                     <small id="nameError" class="error"></small>
@@ -48,19 +49,15 @@
                 <div class="row">
             
                     <div class="form-group">
-                        <div class="form-group">
                             <label>Email <span style="color:red">*</span></label>
                             <input type="email" id="email" class="form-control" placeholder="Nhập email">
                             <small id="emailError" class="error"></small>
-                        </div>
                     </div>
             
                     <div class="form-group">
-                        <div class="form-group">
                             <label>Số điện thoại <span style="color:red">*</span></label>
                             <input type="text" id="phone" class="form-control" placeholder="Nhập số điện thoại">
                             <small id="phoneError" class="error"></small>
-                        </div>
                     </div>
             
                 </div>
