@@ -415,25 +415,26 @@ function hienThiCongViec(danhSach = danhSachCongViec) {
 
     if (!khuVucHienThi) return;
 
-    khuVucHienThi.innerHTML = danhSach.map(congViec => `
-    <div class="col-lg-4 col-md-6 mb-4">
+    khuVucHienThi.innerHTML = danhSach.map((congViec,index) => `
+    <div class="col-lg-4 col-md-6 mb-4"
+     data-aos="zoom-in-up"
+     data-aos-delay="0">
         <div class="card shadow h-100">
-            <div class="card-body">
+             <div class="card-body">
                 <h4>${congViec.tenCongViec}</h4>
                 <p><b>🏢 ${congViec.tenCongTy}</b></p>
                 <p>💰 ${congViec.mucLuong}</p>
                 <p>📍 ${congViec.diaDiem}</p>
                 <p>📌 ${congViec.nganhNghe}</p>
-
                 <button class="btn btn-success"
-                    onclick="xemChiTiet(${congViec.ma})">
-                    Xem chi tiết
-                </button>
-            </div>
+                onclick="xemChiTiet(${congViec.ma})">
+                Xem chi tiết
+            </button>
         </div>
     </div>
+</div>
 `).join("");
-
+AOS.refresh();
 }
 
 function locCongViec() {
