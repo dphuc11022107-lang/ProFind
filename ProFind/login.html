@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+
+    <link rel="stylesheet" href="./asset/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-box">
+
+        <h2 class="auth-title">Đăng nhập</h2>
+
+        <p class="auth-subtitle">
+            Chào mừng bạn quay trở lại ProFind
+        </p>
+
+        <div class="auth-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" placeholder="Nhập email">
+            <small class="error" id="loginEmailError"></small>
+        </div>
+
+        <div class="auth-group">
+            <label>Mật khẩu</label>
+            <input type="password" id="loginPassword" placeholder="Nhập mật khẩu">
+            <small class="error" id="loginPasswordError"></small>
+        </div>
+
+        <button class="auth-btn" onclick="dangNhap()">
+            Đăng nhập
+        </button>
+
+        <div class="auth-link">
+            Chưa có tài khoản?
+            <a href="register.html">Đăng ký</a>
+        </div>
+
+    </div>
+
+    <!-- Popup thông báo -->
+    <div id="messagePopup" class="popup-contact">
+
+        <div class="popup-content">
+
+            <h3 id="popupTitle"></h3>
+
+            <p id="popupText"></p>
+
+            <button onclick="dongThongBao()">Đóng</button>
+
+        </div>
+
+    </div>
+
+    <script src="./asset/js.js"></script>
+
+</body>
+
+</html>
