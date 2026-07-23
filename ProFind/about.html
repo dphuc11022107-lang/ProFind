@@ -12,53 +12,58 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="asset/css.css">
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top custom-navbar">
         <div class="container">
-
-            <a class="navbar-brand fw-bold text-primary" href="index.html">
-                ProFIND
+            <a class="navbar-brand fw-bold text-primary brand-logo" href="index.html">
+                <i class="fa-solid fa-briefcase me-2"></i>Pro<span class="text-dark">FIND</span>
             </a>
-
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+    
             <div class="collapse navbar-collapse" id="menu">
-
-                <ul class="navbar-nav ms-auto">
-
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Trang chủ</a>
+                        <a class="nav-link active" href="index.html">Trang chủ</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="jobs.html">Việc làm</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">Công ty</a>
+                        <a class="nav-link" href="about.html">Công ty</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Liên hệ</a>
                     </li>
-
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center">
+                        <a href="login.html" id="loginBtn" class="btn btn-outline-primary btn-sm rounded-pill me-2"
+                            style="width:110px;">
+                            Đăng nhập
+                        </a>
+                        <a href="register.html" id="registerBtn" class="btn btn-primary btn-sm rounded-pill me-2"
+                            style="width:110px;">
+                            Đăng ký
+                        </a>
+                        <span id="helloUser" class="me-2 fw-semibold"></span>
+                        <button id="logoutBtn" onclick="dangXuat()" class="btn btn-danger btn-sm px-3 rounded-pill"
+                            style="display:none;">
+                            Đăng xuất
+                        </button>
+                    </li>
                 </ul>
-
             </div>
-
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
         <div class="container text-center">
             <h1>About ProFIND</h1>
             <p>Kết nối hàng ngàn ứng viên với cơ hội nghề nghiệp phù hợp trên khắp Việt Nam.</p>
@@ -68,7 +73,7 @@
     <!-- Giới thiệu -->
     <section class="container py-5">
         <div class="about">
-            <div class="vanban">
+            <div class="vanban" data-aos="fade-right">
                 <h2>Câu chuyện của chúng tôi</h2>
                 <p align="justify">
                     ProFIND ra đời với sứ mệnh rút ngắn khoảng cách giữa nhà tuyển dụng và người tìm việc.
@@ -81,7 +86,7 @@
                     họ.
                 </p>
             </div>
-            <div class="hinh-anh">
+            <div class="hinh-anh" data-aos="fade-left">
                 <img src="https://bizweb.dktcdn.net/100/021/721/articles/2.png?v=1621097527560">
             </div>
         </div>
@@ -95,22 +100,22 @@
             <div class="row text-center">
 
                 <div class="col-md-4 mb-3">
-                    <div class="category">
+                    <div class="category" data-aos="zoom-in">
                         🎯
                         <h5>Sứ mệnh</h5>
                         <p class="mb-0">Kết nối ứng viên với công việc mơ ước một cách nhanh chóng và minh bạch.</p>
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="zoom-in">
                     <div class="category">
                         🌱
-                        <h5>Tầm nhìn</h5>
+                        <h5>Tầm nhìn</h5 data-aos="zoom-in">
                         <p class="mb-0">Trở thành nền tảng tuyển dụng hàng đầu Việt Nam vào năm 2030.</p>
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3" data-aos="zoom-in">
                     <div class="category">
                         🤝
                         <h5>Giá trị</h5>
@@ -125,19 +130,19 @@
     <!-- Số liệu -->
     <section class="container py-5 text-center">
         <div class="row">
-            <div class="col-md-3 mb-3">
+            <div class="col-md-3 mb-3" data-aos="zoom-in">
                 <h2>10.000+</h2>
                 <p>Việc làm</p>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-3 mb-3" data-aos="zoom-in">
                 <h2>2.000+</h2>
                 <p>Doanh nghiệp</p>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-3 mb-3" data-aos="zoom-in">
                 <h2>50.000+</h2>
                 <p>Ứng viên</p>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-3 mb-3" data-aos="zoom-in">
                 <h2>22</h2>
                 <p>Quận huyện trên địa bàn TP.HCM</p>
             </div>
@@ -148,7 +153,7 @@
     <section class="container py-5">
         <h2 class="text-center mb-4">Câu hỏi thường gặp</h2>
 
-        <div class="accordion" id="faqAccordion" style="max-width: 800px; margin: 0 auto;">
+        <div class="accordion" id="faqAccordion" data-aos="fade-up" style="max-width: 800px; margin: 0 auto;">
 
             <div class="accordion-item">
                 <h2 class="accordion-header">
@@ -165,7 +170,8 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
                         Làm sao để ứng tuyển một công việc?
                     </button>
                 </h2>
@@ -179,7 +185,8 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faq3">
                         Tôi có thể chỉnh sửa hồ sơ sau khi đã gửi không?
                     </button>
                 </h2>
@@ -193,7 +200,8 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faq4">
                         Bao lâu thì tôi nhận được phản hồi từ nhà tuyển dụng?
                     </button>
                 </h2>
@@ -207,7 +215,8 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faq5">
                         Tôi cần hỗ trợ thêm thì liên hệ ở đâu?
                     </button>
                 </h2>
@@ -221,7 +230,8 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faq6">
                         Tôi có thể ứng tuyển nhiều vị trí cùng lúc không?
                     </button>
                 </h2>
@@ -237,16 +247,56 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
         <div class="container text-center">
             <h3>ProFIND</h3>
             <p>Email: contact@profind.com</p>
             <p>© 2026 ProFIND</p>
         </div>
+    </footer> -->
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4" data-aos="fade-up">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="fw-bold text-primary mb-3">ProFIND</h3>
+                    <p class="text-secondary small">Cầu nối vững chắc giữa người tìm việc và nhà tuyển dụng. Nơi kiến
+                        tạo
+                        tương lai sự nghiệp của bạn.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Liên Hệ</h5>
+                    <p class="text-secondary small mb-1"><i class="fa-solid fa-envelope me-2"></i>contact@profind.com
+                    </p>
+                    <p class="text-secondary small"><i class="fa-solid fa-phone me-2"></i>+84 (0) 123 456 789</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Theo dõi chúng tôi</h5>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-secondary"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-secondary"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4 mb-3">
+            <p class="text-center text-secondary small mb-0">© 2026 ProFIND. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./asset/js.js"></script>
+
+    <!-- AOS Scroll Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Khởi tạo hiệu ứng cuộn AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 
 </html>
