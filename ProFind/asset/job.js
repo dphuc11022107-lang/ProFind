@@ -492,7 +492,25 @@ function locCongViec() {
 
     });
 
+    if (ketQua.length === 0) {
 
+        document.getElementById("danh-sach-cong-viec").innerHTML = `
+            <div class="col-12">
+                <div class="alert alert-warning text-center p-4">
+                    <i class="fa-solid fa-circle-info me-2"></i>
+                    <strong>Không tìm thấy công việc</strong>
+
+                    <p class="mb-0 mt-2">
+                        Rất tiếc, công việc bạn tìm kiếm hiện chưa có trên hệ thống.
+                        Chúng tôi sẽ cố gắng cập nhật thêm trong thời gian sớm nhất!
+                    </p>
+                </div>
+            </div>
+        `;
+
+        return;
+    }
+    
     hienThiCongViec(ketQua);
 
 }
