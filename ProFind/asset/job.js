@@ -392,6 +392,23 @@ const danhSachCongViec = [
     }
 
 ];
+
+function luuCongViec(ma) {
+
+    const congViec = danhSachCongViec.find(
+        job => job.ma === ma
+    );
+
+    if (!congViec) return;
+
+    localStorage.setItem(
+        "congViecDangXem",
+        JSON.stringify(congViec)
+    );
+
+    window.location.href = "detail.html";
+}
+
 let boLocGanNhat = "";
 function hienThiCongViec(danhSach = danhSachCongViec) {
     const khuVucHienThi = document.querySelector("#danh-sach-cong-viec");
@@ -421,42 +438,60 @@ function hienThiCongViec(danhSach = danhSachCongViec) {
 
 function locCongViec() {
 
-    const tuKhoa = document.getElementById("search").value.toLowerCase().trim();
-    const quan = document.getElementById("district").value;
-    const nganh = document.getElementById("category").value;
+    const tuKhoa =
+        document.getElementById("search").value
+        .toLowerCase()
+        .trim();
+
+    const quan =
+        document.getElementById("district").value;
+
+
+    const nganh =
+        document.getElementById("category").value;
+
+
+    const loaiViec =
+        document.getElementById("jobType").value;
+
+
 
     const ketQua = danhSachCongViec.filter(cv => {
+
 
         const dungTuKhoa =
             tuKhoa === "" ||
             cv.tenCongViec.toLowerCase().includes(tuKhoa) ||
             cv.tenCongTy.toLowerCase().includes(tuKhoa);
 
+
+
         const dungQuan =
-            quan === "Tất cả quận" ||
+            quan === "Quận/Huyện" ||
             cv.diaDiem.includes(quan);
+
+
 
         const dungNganh =
             nganh === "" ||
             cv.nganhNghe === nganh;
 
-        if (boLocGanNhat === "search") {
-            return dungTuKhoa;
-        }
 
-        if (boLocGanNhat === "district") {
-            return dungQuan;
-        }
 
-        if (boLocGanNhat === "category") {
-            return dungNganh;
-        }
+        const dungLoai =
+            loaiViec === "Tất cả loại việc làm" ||
+            cv.loaiCongViec === loaiViec;
 
-        return true;
+
+
+        return dungTuKhoa &&
+               dungQuan &&
+               dungNganh &&
+               dungLoai;
+
 
     });
 
-    document.getElementById("ketQua").style.display = "block";
 
     hienThiCongViec(ketQua);
 
