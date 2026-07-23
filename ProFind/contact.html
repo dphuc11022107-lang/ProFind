@@ -12,54 +12,47 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-    
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top custom-navbar">
         <div class="container">
-    
-            <a class="navbar-brand fw-bold text-primary" href="index.html">
-                ProFIND
+            <a class="navbar-brand fw-bold text-primary brand-logo" href="index.html">
+                <i class="fa-solid fa-briefcase me-2"></i>Pro<span class="text-dark">FIND</span>
             </a>
-    
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-    
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
-    
             </button>
     
             <div class="collapse navbar-collapse" id="menu">
-    
-                <ul class="navbar-nav ms-auto">
-    
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
-                            Trang chủ
-                        </a>
+                        <a class="nav-link active" href="index.html">Trang chủ</a>
                     </li>
-    
                     <li class="nav-item">
-                        <a class="nav-link" href="jobs.html">
-                            Việc làm
-                        </a>
+                        <a class="nav-link" href="jobs.html">Việc làm</a>
                     </li>
-    
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            Công ty
-                        </a>
+                        <a class="nav-link" href="about.html">Công ty</a>
                     </li>
-    
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            Liên hệ
-                        </a>
+                        <a class="nav-link" href="contact.html">Liên hệ</a>
                     </li>
-    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center">
+                        <a href="login.html" id="loginBtn" class="btn btn-outline-primary btn-sm rounded-pill me-2"
+                            style="width:110px;">
+                            Đăng nhập
+                        </a>
+                        <a href="register.html" id="registerBtn" class="btn btn-primary btn-sm rounded-pill me-2"
+                            style="width:110px;">
+                            Đăng ký
+                        </a>
+                        <span id="helloUser" class="me-2 fw-semibold"></span>
+                        <button id="logoutBtn" onclick="dangXuat()" class="btn btn-primary btn-sm px-3 rounded-pill"
+                            style="display:none;">
+                            Đăng xuất
+                        </button>
+                    </li>
                 </ul>
-    
             </div>
-    
         </div>
-    
     </nav>
     <div class="contact-page">
 
