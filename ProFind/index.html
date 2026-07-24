@@ -43,14 +43,17 @@
                         <a class="nav-link" href="contact.html">Liên hệ</a>
                     </li>
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center">
-                        <a href="login.html" id="loginBtn" class="btn btn-outline-primary btn-sm rounded-pill me-2" style="width:110px;">
+                        <a href="login.html" id="loginBtn" class="btn btn-outline-primary btn-sm rounded-pill me-2"
+                            style="width:110px;">
                             Đăng nhập
                         </a>
-                        <a href="register.html" id="registerBtn" class="btn btn-primary btn-sm rounded-pill me-2" style="width:110px;">
+                        <a href="register.html" id="registerBtn" class="btn btn-primary btn-sm rounded-pill me-2"
+                            style="width:110px;">
                             Đăng ký
                         </a>
                         <span id="helloUser" class="me-2 fw-semibold"></span>
-                        <button id="logoutBtn" onclick="dangXuat()" class="btn btn-danger btn-sm px-3 rounded-pill" style="display:none;">
+                        <button id="logoutBtn" onclick="dangXuat()" class="btn btn-danger btn-sm px-3 rounded-pill"
+                            style="display:none;">
                             Đăng xuất
                         </button>
                     </li>
@@ -80,32 +83,57 @@
                         <div class="row g-2">
                             <div class="col-12 col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-text bg-transparent border-0 text-muted"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="input-group-text bg-transparent border-0 text-muted"><i
+                                            class="fa-solid fa-location-dot"></i></span>
                                     <select id="district" class="form-select border-0 bg-transparent text-secondary">
                                         <option value="">Địa điểm</option>
                                         <option>Quận 1</option>
                                         <option>Quận 3</option>
+                                        <option>Quận 4</option>
+                                        <option>Quận 5</option>
+                                        <option>Quận 6</option>
                                         <option>Quận 7</option>
+                                        <option>Quận 8</option>
+                                        <option>Quận 10</option>
+                                        <option>Quận 11</option>
+                                        <option>Quận 12</option>
                                         <option>Quận Bình Thạnh</option>
-                                        <option>TP. Thủ Đức</option>
+                                        <option>Quận Gò Vấp</option>
+                                        <option>Quận Phú Nhuận</option>
+                                        <option>Quận Tân Bình</option>
+                                        <option>Quận Tân Phú</option>
+                                        <option>Quận Bình Tân</option>
+                                        <option>Thủ Đức </option>
+                                        <option>Huyện Củ Chi</option>
+                                        <option>Huyện Hóc Môn</option>
+                                        <option>Huyện Nhà Bè</option>
+                                        <option>Huyện Bình Chánh</option>
+                                        <option>Huyện Cần Giờ</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-text bg-transparent border-0 text-muted"><i class="fa-solid fa-layer-group"></i></span>
+                                    <span class="input-group-text bg-transparent border-0 text-muted"><i
+                                            class="fa-solid fa-layer-group"></i></span>
                                     <select id="category" class="form-select border-0 bg-transparent text-secondary">
                                         <option value="">Ngành nghề</option>
-                                        <option value="Công nghệ">Công nghệ IT</option>
-                                        <option value="Marketing">Marketing</option>
+                                        <option value="Phục Vụ">Phục Vụ</option>
                                         <option value="Kế toán">Kế toán</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Công nghệ">Công nghệ</option>
+                                        <option value="Pha chế">Pha chế</option>
+                                        <option value="Tạp Vụ">Tạp Vụ</option>
                                         <option value="Thiết kế">Thiết kế</option>
+                                        <option value="Chăm sóc khách hàng">Chăm sóc khách hàng</option>
+
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12 col-md-4">
                                 <div class="input-group">
-                                    <span class="input-group-text bg-transparent border-0 text-muted"><i class="fa-solid fa-clock"></i></span>
+                                    <span class="input-group-text bg-transparent border-0 text-muted"><i
+                                            class="fa-solid fa-clock"></i></span>
                                     <select id="jobType" class="form-select border-0 bg-transparent text-secondary">
                                         <option value="">Hình thức</option>
                                         <option value="Toàn thời gian">Toàn thời gian</option>
@@ -117,8 +145,10 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <div class="d-flex gap-2">
-                                    <input type="text" id="search" class="form-select border rounded-3 px-3" placeholder="Nhập tên công việc, từ khóa...">
-                                    <button id="searchBtn" class="btn btn-primary px-4 py-2 rounded-3 text-nowrap hover-scale">
+                                    <input type="text" id="search" class="form-select border rounded-3 px-3"
+                                        placeholder="Nhập tên công việc, từ khóa...">
+                                    <button id="searchBtn"
+                                        class="btn btn-primary px-4 py-2 rounded-3 text-nowrap hover-scale">
                                         <i class="fa-solid fa-magnifying-glass me-1"></i> Tìm kiếm
                                     </button>
                                 </div>
@@ -130,11 +160,12 @@
                 <!-- Hình ảnh bên phải với hiệu ứng Nổi (Floating) -->
                 <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000">
                     <div class="hero-image-wrapper position-relative">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                             alt="Làm việc nhóm" class="img-fluid rounded-4 shadow-2xl hero-img floating-animation">
-                        
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                            alt="Làm việc nhóm" class="img-fluid rounded-4 shadow-2xl hero-img floating-animation">
+
                         <!-- Card trang trí động -->
-                        <div class="stat-card glass-card p-3 rounded-4 shadow position-absolute bottom-0 start-0 mb-4 ms-n3 d-none d-sm-flex align-items-center gap-3">
+                        <div
+                            class="stat-card glass-card p-3 rounded-4 shadow position-absolute bottom-0 start-0 mb-4 ms-n3 d-none d-sm-flex align-items-center gap-3">
                             <div class="icon-circle bg-success text-white">
                                 <i class="fa-solid fa-circle-check"></i>
                             </div>
@@ -218,7 +249,7 @@
                 Xem tất cả <i class="fa-solid fa-arrow-right ms-1"></i>
             </a>
         </div>
-    
+
         <div class="row g-4">
             <!-- Job Card 1 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -233,20 +264,22 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2 mb-3">
-                        <span class="badge bg-light text-dark fw-normal"><i class="fa-solid fa-location-dot me-1"></i>Quận
+                        <span class="badge bg-light text-dark fw-normal"><i
+                                class="fa-solid fa-location-dot me-1"></i>Quận
                             9, TP.HCM</span>
                         <span class="badge bg-light text-dark fw-normal"><i
                                 class="fa-solid fa-clock me-1"></i>Full-time</span>
                     </div>
                     <div class="d-flex justify-content-between align-items-center pt-2 border-top">
                         <span class="fw-bold text-success">15 - 20 triệu</span>
-                        <a href="detail.html" onclick="luuCongViec(16)" class="btn btn-primary btn-sm rounded-pill px-3">
+                        <a href="detail.html" onclick="luuCongViec(16)"
+                            class="btn btn-primary btn-sm rounded-pill px-3">
                             Chi tiết
                         </a>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Job Card 2 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="job-card bg-white p-4 rounded-4 shadow-sm border hover-up position-relative h-100">
@@ -260,20 +293,22 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2 mb-3">
-                        <span class="badge bg-light text-dark fw-normal"><i class="fa-solid fa-location-dot me-1"></i>Quận
+                        <span class="badge bg-light text-dark fw-normal"><i
+                                class="fa-solid fa-location-dot me-1"></i>Quận
                             7, TP.HCM</span>
                         <span class="badge bg-light text-dark fw-normal"><i
                                 class="fa-solid fa-clock me-1"></i>Full-time</span>
                     </div>
                     <div class="d-flex justify-content-between align-items-center pt-2 border-top">
                         <span class="fw-bold text-success">18 - 25 triệu</span>
-                        <a href="detail.html" onclick="luuCongViec(20)" class="btn btn-primary btn-sm rounded-pill px-3">
+                        <a href="detail.html" onclick="luuCongViec(20)"
+                            class="btn btn-primary btn-sm rounded-pill px-3">
                             Chi tiết
                         </a>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Job Card 3 -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="job-card bg-white p-4 rounded-4 shadow-sm border hover-up position-relative h-100">
@@ -288,21 +323,23 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2 mb-3">
-                        <span class="badge bg-light text-dark fw-normal"><i class="fa-solid fa-location-dot me-1"></i>Quận
+                        <span class="badge bg-light text-dark fw-normal"><i
+                                class="fa-solid fa-location-dot me-1"></i>Quận
                             1, TP.HCM</span>
                         <span class="badge bg-light text-dark fw-normal"><i
                                 class="fa-solid fa-clock me-1"></i>Full-time</span>
                     </div>
                     <div class="d-flex justify-content-between align-items-center pt-2 border-top">
                         <span class="fw-bold text-success">25 - 35 triệu</span>
-                        <a href="detail.html" onclick="luuCongViec(17)" class="btn btn-primary btn-sm rounded-pill px-3">
+                        <a href="detail.html" onclick="luuCongViec(17)"
+                            class="btn btn-primary btn-sm rounded-pill px-3">
                             Chi tiết
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <div class="text-center mt-4 d-md-none">
             <a href="jobs.html" class="btn btn-primary rounded-pill px-4">Xem tất cả việc làm</a>
         </div>
@@ -315,29 +352,35 @@
             <h2 class="fw-bold mb-2">Đối Tác & Công Ty Nổi Bật</h2>
             <p class="text-muted mb-4">Kết nối với hơn 500+ thương hiệu uy tín hàng đầu</p>
 
-            <div class="row row-cols-2 row-cols-md-5 g-4 align-items-center justify-content-center opacity-75 grayscale-filter">
+            <div
+                class="row row-cols-2 row-cols-md-5 g-4 align-items-center justify-content-center opacity-75 grayscale-filter">
                 <div class="col">
-                    <a href="https://fpt.com.vn/" target="_blank" class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
+                    <a href="https://fpt.com.vn/" target="_blank"
+                        class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
                         <span class="fw-bold text-dark fs-5">FPT Corp</span>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="https://viettel.com.vn/" target="_blank" class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
+                    <a href="https://viettel.com.vn/" target="_blank"
+                        class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
                         <span class="fw-bold text-danger fs-5">Viettel</span>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="https://careers.shopee.vn/" target="_blank" class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
+                    <a href="https://careers.shopee.vn/" target="_blank"
+                        class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
                         <span class="fw-bold text-warning fs-5">Shopee</span>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="https://momo.vn/" target="_blank" class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
+                    <a href="https://momo.vn/" target="_blank"
+                        class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
                         <span class="fw-bold text-primary fs-5">MoMo</span>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="https://vng.com.vn/" target="_blank" class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
+                    <a href="https://vng.com.vn/" target="_blank"
+                        class="company-item p-3 d-block rounded-3 bg-white shadow-sm">
                         <span class="fw-bold text-info fs-5">VNG Group</span>
                     </a>
                 </div>
@@ -351,11 +394,13 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h3 class="fw-bold text-primary mb-3">ProFIND</h3>
-                    <p class="text-secondary small">Cầu nối vững chắc giữa người tìm việc và nhà tuyển dụng. Nơi kiến tạo tương lai sự nghiệp của bạn.</p>
+                    <p class="text-secondary small">Cầu nối vững chắc giữa người tìm việc và nhà tuyển dụng. Nơi kiến
+                        tạo tương lai sự nghiệp của bạn.</p>
                 </div>
                 <div class="col-lg-4">
                     <h5 class="fw-bold mb-3">Liên Hệ</h5>
-                    <p class="text-secondary small mb-1"><i class="fa-solid fa-envelope me-2"></i>contact@profind.com</p>
+                    <p class="text-secondary small mb-1"><i class="fa-solid fa-envelope me-2"></i>contact@profind.com
+                    </p>
                     <p class="text-secondary small"><i class="fa-solid fa-phone me-2"></i>+84 (0) 123 456 789</p>
                 </div>
                 <div class="col-lg-4">
