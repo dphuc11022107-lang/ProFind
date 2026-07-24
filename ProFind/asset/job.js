@@ -647,10 +647,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// =========================
 // XỬ LÝ FORM LIÊN HỆ
-// =========================
-
 const contactForm = document.getElementById("contactForm");
 const popup = document.getElementById("popup");
 
@@ -674,19 +671,37 @@ if (contactForm) {
             document.getElementById("nameError").textContent = "";
         }
 
-        if (email === "") {
-            document.getElementById("emailError").textContent = "Vui lòng nhập email";
-            isValid = false;
-        } else {
-            document.getElementById("emailError").textContent = "";
-        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (phone === "") {
-            document.getElementById("phoneError").textContent = "Vui lòng nhập số điện thoại";
-            isValid = false;
-        } else {
-            document.getElementById("phoneError").textContent = "";
-        }
+if (email === "") {
+    document.getElementById("emailError").textContent =
+        "Vui lòng nhập email";
+    isValid = false;
+}
+else if (!emailRegex.test(email)) {
+    document.getElementById("emailError").textContent =
+        "Email không hợp lệ";
+    isValid = false;
+}
+else {
+    document.getElementById("emailError").textContent = "";
+}
+
+        const phoneRegex = /^[0-9]{10}$/;
+
+if (phone === "") {
+    document.getElementById("phoneError").textContent =
+        "Vui lòng nhập số điện thoại";
+    isValid = false;
+}
+else if (!phoneRegex.test(phone)) {
+    document.getElementById("phoneError").textContent =
+        "Số điện thoại phải có đúng 10 số";
+    isValid = false;
+}
+else {
+    document.getElementById("phoneError").textContent = "";
+}
 
         if (job === "") {
             document.getElementById("jobError").textContent = "Vui lòng nhập chủ đề";
@@ -912,11 +927,7 @@ function kiemTraBieuMau(form) {
 
 }
 
-
-// ===============================
 // LOAD TRANG
-// ===============================
-
 document.addEventListener("DOMContentLoaded", () => {
 
 
