@@ -409,13 +409,12 @@ function luuCongViec(ma) {
     window.location.href = "detail.html";
 }
 
-let boLocGanNhat = "";
 function hienThiCongViec(danhSach = danhSachCongViec) {
     const khuVucHienThi = document.querySelector("#danh-sach-cong-viec");
 
     if (!khuVucHienThi) return;
 
-    khuVucHienThi.innerHTML = danhSach.map((congViec,index) => `
+    khuVucHienThi.innerHTML = danhSach.map((congViec, index) => `
     <div class="col-lg-4 col-md-6 mb-4"
      data-aos="zoom-in-up"
      data-aos-delay="0">
@@ -434,84 +433,85 @@ function hienThiCongViec(danhSach = danhSachCongViec) {
     </div>
 </div>
 `).join("");
-AOS.refresh();
+    AOS.refresh();
 }
-
+function chuanHoaQuan(text) {
+    return text
+        .toLowerCase()
+        .replace("quận", "")
+        .replace("quan", "")
+        .replace("q.", "")
+        .replace("q", "")
+        .replace(/\s+/g, "")
+        .trim();
+}
 function locCongViec() {
 
-    const tuKhoa =
-        document.getElementById("search").value
-        .toLowerCase()
-        .trim();
+    const tuKhoa = document.getElementById("search").value.toLowerCase().trim();
+    const quan = document.getElementById("district").value;
+    const nganh = document.getElementById("category").value;
+    const hinhThuc = document.getElementById("jobType").value;
 
-    const quan =
-        document.getElementById("district").value;
-
-
-    const nganh =
-        document.getElementById("category").value;
-
-
-    const loaiViec =
-        document.getElementById("jobType").value;
-
-
+    const cacTu = tuKhoa.split(" ").filter(t => t !== "");
 
     const ketQua = danhSachCongViec.filter(cv => {
 
+        const ten = cv.tenCongViec.toLowerCase();
+        const congTy = cv.tenCongTy.toLowerCase();
+        const diaDiem = cv.diaDiem.toLowerCase();
+        const loai = cv.loaiCongViec.toLowerCase();
+        const nganhNghe = cv.nganhNghe.toLowerCase();
 
-        const dungTuKhoa =
-            tuKhoa === "" ||
-            cv.tenCongViec.toLowerCase().includes(tuKhoa) ||
-            cv.tenCongTy.toLowerCase().includes(tuKhoa);
+        const quanCV = chuanHoaQuan(cv.diaDiem.split(",")[0]);
 
+        // ===== Ô tìm kiếm =====
+        const dkTuKhoa = cacTu.every(tu => {
 
+            const tuQuan = chuanHoaQuan(tu);
 
-        const dungQuan =
-            quan === "Quận/Huyện" ||
-            cv.diaDiem.includes(quan);
+            return (
+                ten.includes(tu) ||
+                congTy.includes(tu) ||
+                nganhNghe.includes(tu) ||
+                loai.includes(tu) ||
+                diaDiem.includes(tu) ||
+                quanCV === tuQuan
+            );
 
+        });
 
+        // ===== Dropdown =====
+        const dkQuan =
+            quan === "" ||
+            cv.diaDiem.split(",")[0].trim() === quan;
 
-        const dungNganh =
+        const dkNganh =
             nganh === "" ||
             cv.nganhNghe === nganh;
 
+        const dkHinhThuc =
+            hinhThuc === "" ||
+            cv.loaiCongViec === hinhThuc;
 
-
-        const dungLoai =
-            loaiViec === "Tất cả loại việc làm" ||
-            cv.loaiCongViec === loaiViec;
-
-
-
-        return dungTuKhoa &&
-               dungQuan &&
-               dungNganh &&
-               dungLoai;
-
+        return dkTuKhoa && dkQuan && dkNganh && dkHinhThuc;
 
     });
+
+    document.getElementById("ketQua").style.display = "block";
 
     if (ketQua.length === 0) {
 
         document.getElementById("danh-sach-cong-viec").innerHTML = `
             <div class="col-12">
-                <div class="alert alert-warning text-center p-4">
-                    <i class="fa-solid fa-circle-info me-2"></i>
-                    <strong>Không tìm thấy công việc</strong>
-
-                    <p class="mb-0 mt-2">
-                        Rất tiếc, công việc bạn tìm kiếm hiện chưa có trên hệ thống.
-                        Chúng tôi sẽ cố gắng cập nhật thêm trong thời gian sớm nhất!
-                    </p>
+                <div class="alert alert-warning text-center">
+                    Rất tiếc, công việc bạn tìm kiếm hiện chưa có trên hệ thống.
                 </div>
             </div>
         `;
 
         return;
     }
-    
+
     hienThiCongViec(ketQua);
 
 }
@@ -593,34 +593,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // HIỂN THỊ DANH SÁCH CÔNG VIỆC
     document.addEventListener("DOMContentLoaded", () => {
 
-        document.getElementById("searchBtn")
-            ?.addEventListener("click", locCongViec);
+        document.getElementById("search")?.addEventListener("keyup", locCongViec);
 
     });
 
     // TÌM KIẾM
-    document.querySelector("#searchBtn")
-        ?.addEventListener("click", locCongViec);
+    document.getElementById("searchBtn")?.addEventListener("click", locCongViec);
 
-    document.querySelector("#search")
-        ?.addEventListener("keyup", () => {
-            boLocGanNhat = "search";
-            locCongViec();
-        });
+    document.getElementById("search")?.addEventListener("keyup", locCongViec);
 
+    document.getElementById("district")?.addEventListener("change", locCongViec);
 
-    document.querySelector("#district")
-        ?.addEventListener("change", () => {
-            boLocGanNhat = "district";
-            locCongViec();
-        });
+    document.getElementById("category")?.addEventListener("change", locCongViec);
 
-
-    document.querySelector("#category")
-        ?.addEventListener("change", () => {
-            boLocGanNhat = "category";
-            locCongViec();
-        });
+    document.getElementById("jobType")?.addEventListener("change", locCongViec);
     // HIỂN THỊ CHI TIẾT CÔNG VIỆC
     if (document.querySelector("#title")) {
         hienThiChiTiet();
