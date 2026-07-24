@@ -20,7 +20,7 @@
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
@@ -71,91 +71,105 @@
                         Hơn 10.000 việc làm từ các doanh nghiệp hàng đầu Việt Nam.
                     </p>
 
-                    <select id="district">
-                        <option>Địa điểm</option>
-                        <option>Quận 1</option>
-                        <option>Quận 3</option>
-                        <option>Quận 4</option>
-                        <option>Quận 5</option>
-                        <option>Quận 6</option>
-                        <option>Quận 7</option>
-                        <option>Quận 8</option>
-                        <option>Quận 10</option>
-                        <option>Quận 11</option>
-                        <option>Quận 12</option>
-                        <option>Quận Bình Thạnh</option>
-                        <option>Quận Gò Vấp</option>
-                        <option>Quận Phú Nhuận</option>
-                        <option>Quận Tân Bình</option>
-                        <option>Quận Tân Phú</option>
-                        <option>Quận Bình Tân</option>
-                        <option>Thủ Đức </option>
-                        <option>Huyện Củ Chi</option>
-                        <option>Huyện Hóc Môn</option>
-                        <option>Huyện Nhà Bè</option>
-                        <option>Huyện Bình Chánh</option>
-                        <option>Huyện Cần Giờ</option>
-                    </select>
+                    <div class="search-box p-3 bg-white rounded-4 shadow-lg border">
+                        <div class="row g-2">
+                            <div class="col-12 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent border-0 text-muted"><i
+                                            class="fa-solid fa-location-dot"></i></span>
+                                    <select id="district" class="form-select border-0 bg-transparent text-secondary">
+                                        <option value="">Địa điểm</option>
+                                        <option>Quận 1</option>
+                                        <option>Quận 3</option>
+                                        <option>Quận 4</option>
+                                        <option>Quận 5</option>
+                                        <option>Quận 6</option>
+                                        <option>Quận 7</option>
+                                        <option>Quận 8</option>
+                                        <option>Quận 10</option>
+                                        <option>Quận 11</option>
+                                        <option>Quận 12</option>
+                                        <option>Quận Bình Thạnh</option>
+                                        <option>Quận Gò Vấp</option>
+                                        <option>Quận Phú Nhuận</option>
+                                        <option>Quận Tân Bình</option>
+                                        <option>Quận Tân Phú</option>
+                                        <option>Quận Bình Tân</option>
+                                        <option>Thủ Đức </option>
+                                        <option>Huyện Củ Chi</option>
+                                        <option>Huyện Hóc Môn</option>
+                                        <option>Huyện Nhà Bè</option>
+                                        <option>Huyện Bình Chánh</option>
+                                        <option>Huyện Cần Giờ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent border-0 text-muted"><i
+                                            class="fa-solid fa-layer-group"></i></span>
+                                    <select id="category" class="form-select border-0 bg-transparent text-secondary">
+                                        <option value="">Ngành nghề</option>
+                                        <option value="Phục Vụ">Phục Vụ</option>
+                                        <option value="Kế toán">Kế toán</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Công nghệ">Công nghệ</option>
+                                        <option value="Pha chế">Pha chế</option>
+                                        <option value="Tạp Vụ">Tạp Vụ</option>
+                                        <option value="Thiết kế">Thiết kế</option>
+                                        <option value="Chăm sóc khách hàng">Chăm sóc khách hàng</option>
 
-                    <select id="category">
-                        <option value="">Ngành nghề</option>
-                        <option value="Phục Vụ">Phục Vụ</option>
-                        <option value="Kế toán">Kế toán</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Công nghệ">Công nghệ</option>
-                        <option value="Pha chế">Pha chế</option>
-                        <option value="Tạp Vụ">Tạp Vụ</option>
-                        <option value="Chăm sóc khách hàng">Chăm sóc khách hàng</option>
-                    </select>
-
-
-                    <select id="jobType">
-                        <option>Hình thức</option>
-                        <option value="Toàn thời gian">Toàn thời gian</option>
-                        <option value="Bán thời gian">Bán thời gian</option>
-                        <option value="Thực tập">Thực tập</option>
-                        <option value="Thời vụ">Thời vụ</option>
-                        <option value="Làm theo ca">Làm theo ca</option>
-                        <option value="Freelancer">Freelancer</option>
-                        <option value="Làm từ xa">Làm từ xa (Remote)</option>
-                        <option value="Hợp đồng">Hợp đồng</option>
-                    </select>
-
-                    <input type="text" id="search" placeholder="Tìm Việc Làm">
-                    <button id="searchBtn" class="search-btn">
-                        Tìm kiếm
-                    </button>
-                    <br>
-                    </select>
-
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent border-0 text-muted"><i
+                                            class="fa-solid fa-clock"></i></span>
+                                    <select id="jobType" class="form-select border-0 bg-transparent text-secondary">
+                                        <option value="">Hình thức</option>
+                                        <option value="Toàn thời gian">Toàn thời gian</option>
+                                        <option value="Bán thời gian">Bán thời gian</option>
+                                        <option value="Thực tập">Thực tập</option>
+                                        <option value="Làm từ xa">Làm từ xa (Remote)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="d-flex gap-2">
+                                    <input type="text" id="search" class="form-select border rounded-3 px-3"
+                                        placeholder="Nhập tên công việc, từ khóa...">
+                                    <button id="searchBtn"
+                                        class="btn btn-primary px-4 py-2 rounded-3 text-nowrap hover-scale">
+                                        <i class="fa-solid fa-magnifying-glass me-1"></i> Tìm kiếm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="image" data-aos="fade-left" data-aos-duration="800">
 
-                    <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/03/hinh-anh-lam-viec-inkythuatso-14-09-41-30.jpg"
-                        class="img-fluid">
+        <div class="image" data-aos="fade-left" data-aos-duration="800">
 
-                </div>
-
-            </div>
+            <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/03/hinh-anh-lam-viec-inkythuatso-14-09-41-30.jpg"
+                class="img-fluid">
 
         </div>
-        <div class="container mt-5">
 
-        <h1 class="mb-4" data-aos="fade-up">
+        </div>
 
+        <section class="container py-5" id="ketQua">
+
+            <h2 class="fw-bold mb-4">
                 Danh sách việc làm
+            </h2>
 
-            </h1>
+            <div class="row" id="danh-sach-cong-viec"></div>
 
-            <div id="danh-sach-cong-viec" class="row">
-
-            </div>
-
-        </div>
-        </div>
-        <script src="./asset/job.js"></script>
+        </section>
         <script src="./asset/js.js"></script>
+        <script src="./asset/job.js"></script>
 
         <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
         <script>
