@@ -15,7 +15,6 @@ function dongFormUngTuyen(){
     }
 }
 
-
 function closePopup(){
 
     const popup = document.getElementById("successPopup");
@@ -294,6 +293,7 @@ document.addEventListener("DOMContentLoaded",function(){
 });
 
 // POPUP 
+//ở nơi đăng kí với đăng nhập
 function hienThongBao(title,message,success=true){
     const popup=document.getElementById("messagePopup");
     if(!popup) return;

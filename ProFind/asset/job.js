@@ -534,20 +534,8 @@ function kiemTraBieuMau(bieuMau) {
     return hopLe;
 }
 
-function closePopup() {
-    const successPopup =
-        document.querySelector("#successPopup");
-    if (successPopup) {
-        successPopup.style.display = "none";
-    }
-}
-
+// lọc ở trang chủ
 document.addEventListener("DOMContentLoaded", () => {
-    // HIỂN THỊ DANH SÁCH CÔNG VIỆC
-    document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("search")?.addEventListener("keyup", locCongViec);
-    });
-
     // TÌM KIẾM
     document.getElementById("searchBtn")?.addEventListener("click", locCongViec);
     document.getElementById("search")?.addEventListener("keyup", locCongViec);
@@ -661,11 +649,6 @@ else {
 
     });
 }
-
-// Đóng popup thông báo
-// function closePopup() {
-//     popup.style.display = "none";
-// }
 
 // HIỂN THỊ CHI TIẾT CÔNG VIỆC
 function hienThiChiTiet() {
