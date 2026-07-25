@@ -88,7 +88,7 @@ ProFIND/
 | 2551010259 | Nguyễn Ngọc Trường Xuân| Danh sách việc làm |
 | 2551010227 | Lê Bảo Thy | Chi tiết việc làm & Công ty |
 | XXXXXXXX | Thành viên 4 | Ứng tuyển, Liên hệ & Giới thiệu |
-| XXXXXXXX | Thành viên 5 | CSS tổng thể, JavaScript, Responsive & Ghép dự án |
+| 2551010151 | Dương Khánh Ngọc | CSS tổng thể, JavaScript, Responsive & Ghép dự án |
 
 ---
 
