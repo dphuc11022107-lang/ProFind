@@ -72,31 +72,12 @@
         <button class="btn" onclick="moFormUngTuyen()">
             <i class="fa-solid fa-file-signature"></i> Ứng tuyển
         </button>
-        <!-- Popup Apply -->
+        
         <div id="applyPopup" class="popup">
             <div class="form-apply">
                 <span class="close" onclick="dongFormUngTuyen()">&times;</span>
                 <h2 class="form-title"><i class="fa-solid fa-file-signature"></i> Ứng tuyển</h2>
                 <form id="applyForm">
-                    <!-- <div class="upload-box">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <h4>Tải CV từ máy tính</h4>
-                        <p>Hỗ trợ định dạng .doc, .docx, .pdf (tối đa 5MB)</p>
-                        <input type="file" id="cv" hidden>
-                        <label for="cv" class="upload-btn">
-                            Chọn CV
-                        </label>
-                    </div>
-        
-                    <div class="info-header">
-                        <span class="info-left">
-                            Vui lòng nhập đầy đủ thông tin chi tiết:
-                        </span>
-        
-                        <span class="info-right">
-                            (*) Thông tin bắt buộc
-                        </span>
-                    </div> -->
                     <div class="form-group">
                         <label>Họ và tên <span style="color:red">*</span></label>
                         <input type="text" id="name" class="form-control" placeholder="Nhập họ và tên">
@@ -132,7 +113,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Giới thiệu bản thân</label>
+                        <label>Giới thiệu bản thân <span style="color:red">*</span></label>
 
                         <textarea id="note" class="form-control"
                             placeholder="Giới thiệu đôi nét về bản thân"></textarea>

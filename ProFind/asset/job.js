@@ -303,7 +303,7 @@ const danhSachCongViec = [
     },
     {
         ma: 28,
-        tenCongViec: "Nhạp vụ khách sạn",
+        tenCongViec: "Tạp vụ khách sạn",
         tenCongTy: "Sun Hotel",
         mucLuong: "7.000.000 - 10.000.000 đ/tháng",
         diaDiem: "Quận 3, TP. Hồ Chí Minh",
@@ -394,18 +394,9 @@ const danhSachCongViec = [
 ];
 
 function luuCongViec(ma) {
-
-    const congViec = danhSachCongViec.find(
-        job => job.ma === ma
-    );
-
+    const congViec = danhSachCongViec.find( job => job.ma === ma );
     if (!congViec) return;
-
-    localStorage.setItem(
-        "congViecDangXem",
-        JSON.stringify(congViec)
-    );
-
+    localStorage.setItem("congViecDangXem", JSON.stringify(congViec));
     window.location.href = "detail.html";
 }
 
@@ -415,9 +406,7 @@ function hienThiCongViec(danhSach = danhSachCongViec) {
     if (!khuVucHienThi) return;
 
     khuVucHienThi.innerHTML = danhSach.map((congViec, index) => `
-    <div class="col-lg-4 col-md-6 mb-4"
-     data-aos="zoom-in-up"
-     data-aos-delay="0">
+    <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in-up" data-aos-delay="0">
         <div class="card shadow h-100">
              <div class="card-body">
                 <h4>${congViec.tenCongViec}</h4>
@@ -425,8 +414,7 @@ function hienThiCongViec(danhSach = danhSachCongViec) {
                 <p>💰 ${congViec.mucLuong}</p>
                 <p>📍 ${congViec.diaDiem}</p>
                 <p>📌 ${congViec.nganhNghe}</p>
-                <button class="btn btn-success"
-                onclick="xemChiTiet(${congViec.ma})">
+                <button class="btn btn-success" onclick="xemChiTiet(${congViec.ma})">
                 Xem chi tiết
             </button>
         </div>
@@ -435,6 +423,7 @@ function hienThiCongViec(danhSach = danhSachCongViec) {
 `).join("");
     AOS.refresh();
 }
+
 function chuanHoaQuan(text) {
     return text
         .toLowerCase()
@@ -445,6 +434,7 @@ function chuanHoaQuan(text) {
         .replace(/\s+/g, "")
         .trim();
 }
+
 function locCongViec() {
 
     const tuKhoa = document.getElementById("search").value.toLowerCase().trim();
@@ -464,7 +454,6 @@ function locCongViec() {
 
         const quanCV = chuanHoaQuan(cv.diaDiem.split(",")[0]);
 
-        // ===== Ô tìm kiếm =====
         const dkTuKhoa = cacTu.every(tu => {
 
             const tuQuan = chuanHoaQuan(tu);
@@ -477,24 +466,12 @@ function locCongViec() {
                 diaDiem.includes(tu) ||
                 quanCV === tuQuan
             );
+    });
 
-        });
-
-        // ===== Dropdown =====
-        const dkQuan =
-            quan === "" ||
-            cv.diaDiem.split(",")[0].trim() === quan;
-
-        const dkNganh =
-            nganh === "" ||
-            cv.nganhNghe === nganh;
-
-        const dkHinhThuc =
-            hinhThuc === "" ||
-            cv.loaiCongViec === hinhThuc;
-
+        const dkQuan = quan === "" || cv.diaDiem.split(",")[0].trim() === quan;
+        const dkNganh = nganh === "" || cv.nganhNghe === nganh;
+        const dkHinhThuc = hinhThuc === "" || cv.loaiCongViec === hinhThuc;
         return dkTuKhoa && dkQuan && dkNganh && dkHinhThuc;
-
     });
 
     document.getElementById("ketQua").style.display = "block";
@@ -504,43 +481,29 @@ function locCongViec() {
         document.getElementById("danh-sach-cong-viec").innerHTML = `
             <div class="col-12">
                 <div class="alert alert-warning text-center">
-                    Rất tiếc, công việc bạn tìm kiếm hiện chưa có trên hệ thống.
+                    Rất tiếc, công việc bạn tìm kiếm hiện chưa có trên hệ thống. Chúng tôi sẽ cố gắng cập nhật thêm sớm nhất!
                 </div>
             </div>
         `;
-
         return;
     }
-
     hienThiCongViec(ketQua);
-
 }
+
 function xemChiTiet(maCongViec) {
     const congViec = danhSachCongViec.find(
         congViec => congViec.ma === maCongViec
     );
-
     if (!congViec) return;
-
     localStorage.setItem(
         "congViecDangXem",
         JSON.stringify(congViec)
     );
-
     window.location.href = "detail.html";
-
 }
-
-
-
-/*const applyPopup = document.querySelector("#applyPopup");
-if (applyPopup) {
-    applyPopup.style.display = "flex";
-}*/
 
 function dongFormUngTuyen() {
     const applyPopup = document.querySelector("#applyPopup");
-
     if (applyPopup) {
         applyPopup.style.display = "none";
     }
@@ -559,62 +522,47 @@ function kiemTraBieuMau(bieuMau) {
     ];
 
     cacTruong.forEach(([id, thongBao]) => {
-
         const oNhap = bieuMau.querySelector(`#${id}`);
         const oLoi = bieuMau.querySelector(`#${id}Error`);
-
         if (!oNhap || !oLoi) return;
-
         if (oNhap.value.trim() === "") {
             oLoi.textContent = thongBao;
             hopLe = false;
         } else {
             oLoi.textContent = "";
         }
-
     });
-
     return hopLe;
-
 }
 
 function closePopup() {
     const successPopup =
         document.querySelector("#successPopup");
-
     if (successPopup) {
         successPopup.style.display = "none";
     }
-
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-
     // HIỂN THỊ DANH SÁCH CÔNG VIỆC
     document.addEventListener("DOMContentLoaded", () => {
-
         document.getElementById("search")?.addEventListener("keyup", locCongViec);
-
     });
 
     // TÌM KIẾM
     document.getElementById("searchBtn")?.addEventListener("click", locCongViec);
-
     document.getElementById("search")?.addEventListener("keyup", locCongViec);
-
     document.getElementById("district")?.addEventListener("change", locCongViec);
-
     document.getElementById("category")?.addEventListener("change", locCongViec);
-
     document.getElementById("jobType")?.addEventListener("change", locCongViec);
+
     // HIỂN THỊ CHI TIẾT CÔNG VIỆC
     if (document.querySelector("#title")) {
         hienThiChiTiet();
     }
 
     // FORM ỨNG TUYỂN
-    const applyForm =
-        document.querySelector("#applyForm");
+    const applyForm = document.querySelector("#applyForm");
 
     if (applyForm) {
 
@@ -622,29 +570,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
 
-            // Kiểm tra form
             if (!kiemTraBieuMau(applyForm)) {
                 return;
             }
 
-            // Nếu nhập đủ thông tin thì hiện thông báo thành công
-            const successPopup =
-                document.querySelector("#successPopup");
+            const successPopup = document.querySelector("#successPopup");
 
             if (successPopup) {
                 successPopup.style.display = "flex";
             }
-
-            // Xóa dữ liệu trong form
             applyForm.reset();
-
-            // Đóng form ứng tuyển
             dongFormUngTuyen();
-
         });
-
     }
-
 });
 
 // XỬ LÝ FORM LIÊN HỆ
@@ -673,19 +611,17 @@ if (contactForm) {
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-if (email === "") {
-    document.getElementById("emailError").textContent =
-        "Vui lòng nhập email";
-    isValid = false;
-}
-else if (!emailRegex.test(email)) {
-    document.getElementById("emailError").textContent =
-        "Email không hợp lệ";
-    isValid = false;
-}
-else {
-    document.getElementById("emailError").textContent = "";
-}
+        if (email === "") {
+            document.getElementById("emailError").textContent = "Vui lòng nhập email";
+        isValid = false;
+        }
+        else if (!emailRegex.test(email)) {
+            document.getElementById("emailError").textContent = "Email không hợp lệ";
+        isValid = false;
+        }
+        else {
+            document.getElementById("emailError").textContent = "";
+        }
 
         const phoneRegex = /^[0-9]{10}$/;
 
@@ -717,12 +653,9 @@ else {
             document.getElementById("noteError").textContent = "";
         }
 
-        // Nếu nhập đầy đủ thông tin
         if (isValid) {
-
             // Hiển thị thông báo thành công
             popup.style.display = "flex";
-
             // Xóa dữ liệu trong form
             contactForm.reset();
         }
@@ -735,10 +668,7 @@ else {
 //     popup.style.display = "none";
 // }
 
-// ===============================
 // HIỂN THỊ CHI TIẾT CÔNG VIỆC
-// ===============================
-
 function hienThiChiTiet() {
 
     const congViec = JSON.parse(
@@ -747,31 +677,14 @@ function hienThiChiTiet() {
 
     if (!congViec) return;
 
-
-    document.querySelector("#title").textContent =
-        congViec.tenCongViec;
-
-    document.querySelector("#company").textContent =
-        congViec.tenCongTy;
-
-    document.querySelector("#salary").textContent =
-        congViec.mucLuong;
-
-    document.querySelector("#location").textContent =
-        congViec.diaDiem;
-
-    document.querySelector("#type").textContent =
-        congViec.loaiCongViec;
-
-    document.querySelector("#category").textContent =
-        congViec.nganhNghe;
-
-    document.querySelector("#description").textContent =
-        congViec.moTa;
-
-    document.querySelector("#requirement").textContent =
-        congViec.yeuCau;
-
+    document.querySelector("#title").textContent = congViec.tenCongViec;
+    document.querySelector("#company").textContent = congViec.tenCongTy;
+    document.querySelector("#salary").textContent = congViec.mucLuong;
+    document.querySelector("#location").textContent = congViec.diaDiem;
+    document.querySelector("#type").textContent = congViec.loaiCongViec;
+    document.querySelector("#category").textContent = congViec.nganhNghe;
+    document.querySelector("#description").textContent = congViec.moTa;
+    document.querySelector("#requirement").textContent = congViec.yeuCau;
 
     // tự điền vị trí ứng tuyển
     const jobInput = document.querySelector("#job");
@@ -779,14 +692,8 @@ function hienThiChiTiet() {
     if (jobInput) {
         jobInput.value = congViec.tenCongViec;
     }
-
 }
-
-
-// ===============================
 // MỞ / ĐÓNG FORM ỨNG TUYỂN
-// ===============================
-
 function moFormUngTuyen() {
 
     const applyPopup =
@@ -810,10 +717,7 @@ function dongFormUngTuyen() {
 
 }
 
-// ===============================
 // KIỂM TRA FORM ỨNG TUYỂN
-// ===============================
-
 function kiemTraBieuMau(form) {
 
     let hopLe = true;
@@ -854,33 +758,22 @@ function kiemTraBieuMau(form) {
 
 
 
-    let emailRegex =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
     if (email.value.trim() == "") {
-
         document.querySelector("#emailError")
             .textContent = "Vui lòng nhập email";
-
         hopLe = false;
 
     }
     else if (!emailRegex.test(email.value)) {
-
         document.querySelector("#emailError")
             .textContent = "Email không hợp lệ";
-
         hopLe = false;
-
     }
 
-
-
-
-    let phoneRegex =
-        /^[0-9]{10}$/;
-
+    let phoneRegex = /^[0-9]{10}$/;
 
     if (phone.value.trim() == "") {
 
@@ -899,8 +792,6 @@ function kiemTraBieuMau(form) {
 
     }
 
-
-
     if (job.value.trim() == "") {
 
         document.querySelector("#jobError")
@@ -909,8 +800,6 @@ function kiemTraBieuMau(form) {
         hopLe = false;
 
     }
-
-
 
     if (note.value.trim() == "") {
 
@@ -921,87 +810,42 @@ function kiemTraBieuMau(form) {
 
     }
 
-
-
     return hopLe;
 
 }
 
 // LOAD TRANG
 document.addEventListener("DOMContentLoaded", () => {
-
-
     // trang danh sách
     if (document.querySelector("#danh-sach-cong-viec")) {
-
         hienThiCongViec();
-
     }
-
-
 
     // trang chi tiết
     if (document.querySelector("#title")) {
-
         hienThiChiTiet();
-
     }
 
-
-
-
     // form ứng tuyển
-
-    const applyForm =
-        document.querySelector("#applyForm");
-
-
+    const applyForm = document.querySelector("#applyForm");
 
     if (applyForm) {
-
-
         applyForm.addEventListener(
             "submit",
             function (e) {
-
-
                 e.preventDefault();
-
-
-
                 if (!kiemTraBieuMau(applyForm)) {
                     return;
                 }
-
-
-
-                const successPopup =
-                    document.querySelector("#successPopup");
-
-
-
+                const successPopup = document.querySelector("#successPopup");
                 if (successPopup) {
-
                     successPopup.style.display = "flex";
-
                 }
-
-
-
                 applyForm.reset();
-
-
                 dongFormUngTuyen();
-
-
             }
         );
-
-
     }
-
-
-
 });
 
 function closePopup() {
