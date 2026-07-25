@@ -507,7 +507,6 @@ function dongFormUngTuyen() {
     if (applyPopup) {
         applyPopup.style.display = "none";
     }
-
 }
 
 function kiemTraBieuMau(bieuMau) {

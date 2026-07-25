@@ -1,24 +1,18 @@
 // POPUP ỨNG TUYỂN
-
 function moFormUngTuyen(){
-
     const popup = document.getElementById("applyPopup");
-
     if(popup){
         popup.style.display = "flex";
     }
-
 }
 
 
 function dongFormUngTuyen(){
 
     const popup = document.getElementById("applyPopup");
-
     if(popup){
         popup.style.display = "none";
     }
-
 }
 
 
@@ -32,8 +26,6 @@ function closePopup(){
 
 }
 
-
-
 // HIỂN THỊ CHI TIẾT
 
 function hienThiChiTiet(){
@@ -43,94 +35,47 @@ function hienThiChiTiet(){
     );
 
 
-    if(!congViec) return;
-
-
-    document.getElementById("title").textContent =
-        congViec.tenCongViec;
-
-
-    document.getElementById("company").textContent =
-        congViec.tenCongTy;
-
-
-    document.getElementById("salary").textContent =
-        congViec.mucLuong;
-
-
-    document.getElementById("location").textContent =
-        congViec.diaDiem;
-
-
-    document.getElementById("type").textContent =
-        congViec.loaiCongViec;
-
-
-    document.getElementById("category").textContent =
-        congViec.nganhNghe;
-
-
-    document.getElementById("description").textContent =
-        congViec.moTa;
-
-
-    document.getElementById("requirement").textContent =
-        congViec.yeuCau;
-
-
+    if (!congViec) return;
+    
+    document.getElementById("title").textContent = congViec.tenCongViec;
+    document.getElementById("company").textContent = congViec.tenCongTy;
+    document.getElementById("salary").textContent = congViec.mucLuong;
+    document.getElementById("location").textContent = congViec.diaDiem;
+    document.getElementById("type").textContent = congViec.loaiCongViec;
+    document.getElementById("category").textContent = congViec.nganhNghe;
+    document.getElementById("description").textContent = congViec.moTa;
+    document.getElementById("requirement").textContent = congViec.yeuCau;
 
     // tự điền vị trí ứng tuyển
-
     const jobInput = document.getElementById("job");
 
-    if(jobInput){
-
+    if(jobInput)
         jobInput.value = congViec.tenCongViec;
-
-    }
-
 }
 
 // load trang
 document.addEventListener("DOMContentLoaded",()=>{
     // trang detail
     if(document.getElementById("title")){
-
         hienThiChiTiet();
-
     }
     // form apply
-
-    const form =
-    document.getElementById("applyForm");
+    const form = document.getElementById("applyForm");
     if(form){
-
         form.addEventListener("submit",(e)=>{
-
-
             e.preventDefault();
-
-
-
             if(!kiemTraBieuMau()){
-
-                return;
-
+                 return;
             }
-            const success =
-            document.getElementById("successPopup");
+            const success = document.getElementById("successPopup");
             if(success){
-
                 success.style.display="flex";
-
             }
             form.reset();
             dongFormUngTuyen();
         });
 
     }
-
-
 });
 
 // ĐĂNG KÝ - ĐĂNG NHẬP
@@ -140,7 +85,6 @@ function dangKy(){
     const email = document.getElementById("registerEmail").value.trim();
     const password = document.getElementById("registerPassword").value;
     const confirmPassword = document.getElementById("registerConfirmPassword").value;
-
 
     const nameError = document.getElementById("registerNameError");
     const emailError = document.getElementById("registerEmailError");
@@ -157,45 +101,30 @@ function dangKy(){
 
     // Kiểm tra họ tên
     if(name == ""){
-        nameError.textContent =
-        "Vui lòng nhập họ và tên.";
+        nameError.textContent = "Vui lòng nhập họ và tên.";
         hopLe = false;
     }
     // Kiểm tra email
     if(email == ""){
-        emailError.textContent =
-        "Vui lòng nhập email.";
+        emailError.textContent = "Vui lòng nhập email.";
         hopLe = false;
     }
 
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if(email != "" && !emailRegex.test(email)){
-
-        emailError.textContent =
-        "Email không đúng định dạng.";
-
+        emailError.textContent = "Email không đúng định dạng.";
         hopLe = false;
-
     }
 
     // Kiểm tra mật khẩu
-
     if(password == ""){
-
-        passwordError.textContent =
-        "Vui lòng nhập mật khẩu.";
-
+        passwordError.textContent = "Vui lòng nhập mật khẩu.";
         hopLe = false;
-
     }
     else if(password.length < 6){
-
-        passwordError.textContent =
-        "Mật khẩu phải có ít nhất 6 ký tự.";
-
+        passwordError.textContent = "Mật khẩu phải có ít nhất 6 ký tự.";
         hopLe = false;
-
     }
 
     // Kiểm tra xác nhận mật khẩu
@@ -212,16 +141,15 @@ function dangKy(){
     if(!hopLe){
         return;
     }
+
     // Lấy danh sách user
     let users = JSON.parse(
         localStorage.getItem("users")
     ) || [];
+
     // Kiểm tra email đã tồn tại
-
     let check = users.find(function(item){
-
         return item.email == email;
-
     });
 
     if(check){
@@ -251,11 +179,8 @@ function dangKy(){
     );
 
     setTimeout(function(){
-
         window.location.href = "login.html";
-
     },1500);
-
 }
 
 function dangNhap(){
@@ -280,14 +205,11 @@ function dangNhap(){
 
     // kiểm tra email
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
     if(email != "" && !emailRegex.test(email)){
         emailError.textContent =
         "Email không đúng định dạng.";
         hopLe = false;
     }
-
 
     // bỏ trống mật khẩu
     if(password == ""){
@@ -362,20 +284,14 @@ function kiemTraDangNhap(){
 
 }
 
-
-
 function dangXuat(){
     localStorage.removeItem("currentUser");
     location.reload();
 }
 
-
-
 document.addEventListener("DOMContentLoaded",function(){
     kiemTraDangNhap();
 });
-
-
 
 // POPUP 
 function hienThongBao(title,message,success=true){
