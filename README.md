@@ -39,35 +39,6 @@ Dự án được thực hiện trong khuôn khổ môn **Lập trình Web** t�
 - 👨‍💻 Giới thiệu dự án
 - 📱 Responsive trên Desktop, Tablet và Mobile
 
----
-
-## 📂 Cấu trúc thư mục
-
-```
-ProFIND/
-│
-├── index.html
-├── jobs.html
-├── job-detail.html
-├── company.html
-├── about.html
-├── contact.html
-├── apply.html
-│
-├── css/
-│   ├── style.css
-│   └── responsive.css
-│
-├── js/
-│   ├── script.js
-│   ├── jobs.js
-│   ├── detail.js
-│   └── form.js
-│
-├── images/
-│
-└── README.md
-```
 
 ---
 
