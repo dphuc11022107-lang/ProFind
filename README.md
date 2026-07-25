@@ -58,7 +58,7 @@ Dự án được thực hiện trong khuôn khổ môn **Lập trình Web** t�
 | 2551010179 | Đào Thị Diễm Phúc | Trang chủ |
 | 2551010259 | Nguyễn Ngọc Trường Xuân| Danh sách việc làm |
 | 2551010227 | Lê Bảo Thy | Chi tiết việc làm & Công ty |
-| XXXXXXXX | Thành viên 4 | Ứng tuyển, Liên hệ & Giới thiệu |
+| 2551010225 | Võ Minh Thư | Ứng tuyển, Liên hệ & Giới thiệu |
 | 2551010151 | Dương Khánh Ngọc | CSS tổng thể, JavaScript, Responsive & Ghép dự án |
 
 ---
