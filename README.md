@@ -4,7 +4,7 @@
 
 **ProFIND** là website tìm việc làm được xây dựng bằng HTML, CSS và JavaScript, nhằm kết nối ứng viên với các doanh nghiệp tuyển dụng một cách nhanh chóng và thuận tiện.
 
-Dự án được thực hiện trong khuôn khổ môn **Lập trình Web** tại Trường Đại học Mở TP. Hồ Chí Minh.
+Dự án được thực hiện trong khuôn khổ môn **Ứng dụng web** tại Trường Đại học Mở TP. Hồ Chí Minh.
 
 ---
 
